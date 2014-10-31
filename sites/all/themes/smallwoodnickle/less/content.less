@@ -1,0 +1,82 @@
+// Insert your styling here.
+.jumbotron, 
+.flexslider{
+	.strip;
+}
+
+.flexslider {
+	margin-bottom: 60px;
+}
+
+.masonry-item {
+	margin-bottom: 10px;
+	cursor: pointer;
+
+	&.faded {
+		opacity: .5;
+	}
+
+	&.Staff {
+		width: 24%;
+
+		@media @normal {
+			width: 24%;
+		}
+	}
+	&.Partner {
+		width: 49%;
+
+		@media @normal {
+			width: 49%;
+		}
+
+		.title {
+			font-size: 2em;
+		}
+	}
+	.title {
+		transform: rotate(-90deg);
+		position: absolute;
+		left: 0;
+		left: 30px;
+		bottom: 0;
+		font: 1.5em Times,serif;
+		text-transform: uppercase;
+		width: 14px;
+
+		a {
+			color: @body-bg;
+		}
+	}
+}
+
+.bio {
+	display: none;
+	color: @body-bg;
+	background: @gray-darker;
+	max-height: 274px;
+	overflow: scroll;
+	opacity: 0;
+	padding: 2em;
+
+	&.masonry-item {
+		display: block;
+		opacity: 1;
+
+		.guts {
+			position:relative;
+
+			&:before {
+				content: "";
+			   display: block;
+			   width: 0; 
+			   height: 0; 
+			   border-top: 12px solid transparent;
+			   border-bottom: 12px solid transparent;
+			   border-left: 12px solid #fff; 
+			   position: fixed;
+				margin-left: -2em;
+			}
+		}
+	}
+}
