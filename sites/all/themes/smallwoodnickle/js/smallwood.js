@@ -5,10 +5,10 @@
    		/* Toggle the visibility of the staff bios */
 			$('.team').click(function() {
 				var w = $(this).width(),
-				 	 h = $(this).height(),
+				    h = $(this).height(),
 				    bio = $('.bio',this),
 				    bro = $(this).siblings(),
-					 cont = $('.masonry');
+				    cont = $('.masonry');
 
 
 				$(this).removeClass('faded').toggleClass('active').siblings().next('.bio.masonry-item').remove();
