@@ -6248,27 +6248,26 @@ body #admin-menu .dropdown li {
   line-height: normal;
 }
 .navbar.container {
+  background: none;
+  border: none;
+  max-width: 100%;
   margin-top: 20px;
 }
-@media screen and (min-width: 768px) {
-  .navbar.container {
-    max-width: 720px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .navbar.container {
-    max-width: 940px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .navbar.container {
-    max-width: 1140px;
-  }
+.front .navbar.container {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
 .navbar.container > .container {
   margin: 0;
   padding: 0;
   width: auto;
+}
+.navbar.container .navbar-nav {
+  float: right;
+}
+.front .navbar.container .navbar-nav li a {
+  color: #fff;
 }
 #overlay-container,
 .overlay-modal-background,
@@ -6319,6 +6318,7 @@ ul.secondary {
 @media screen and (min-width: 768px) {
   ul.secondary {
     float: right;
+    margin-right: 5em;
   }
 }
 .page-header {
@@ -6938,3 +6938,4 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   position: fixed;
   margin-left: -2em;
 }
+/*# sourceMappingURL=style.css.map */

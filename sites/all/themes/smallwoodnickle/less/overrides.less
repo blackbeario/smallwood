@@ -109,20 +109,29 @@ body {
 
 // Default navbar.
 .navbar.container {
-  @media @tablet {
-    max-width: ((@container-sm - @grid-gutter-width));
-  }
-  @media @normal {
-    max-width: ((@container-md - @grid-gutter-width));
-  }
-  @media @wide {
-    max-width: ((@container-lg - @grid-gutter-width));
-  }
+  background: none;
+  border: none;
+  max-width: 100%;
   margin-top: 20px;
+
+  .front & {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
   > .container {
     margin: 0;
     padding: 0;
     width: auto;
+  }
+
+  .navbar-nav {
+    float: right;
+
+    .front & li a {
+      color: #fff;
+    }
   }
 }
 
@@ -179,6 +188,7 @@ ul.secondary {
   float: left;
   @media @tablet {
     float: right;
+    margin-right: 5em;
   }
 }
 
