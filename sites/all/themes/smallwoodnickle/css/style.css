@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 .strip {
   background: none;
   border: none;
@@ -6870,9 +6870,7 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   box-shadow: none;
   margin: 0;
   padding: 0;
-}
-.flexslider {
-  margin-bottom: 60px;
+  position: relative;
 }
 .masonry-item {
   margin-bottom: 10px;
@@ -6939,5 +6937,20 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   border-left: 12px solid #fff;
   position: fixed;
   margin-left: -2em;
+}
+#block-menu-menu-footer-nav {
+  background-image: -webkit-linear-gradient(left, #142338, #263b57 50%, #0c192b);
+  background-image: -o-linear-gradient(left, #142338, #263b57 50%, #0c192b);
+  background-image: linear-gradient(to right, #142338, #263b57 50%, #0c192b);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff142338', endColorstr='#ff0c192b', GradientType=1);
+  bottom: 0;
+  width: 100%;
+}
+#block-menu-menu-footer-nav.fixed {
+  bottom: auto;
+  top: 0;
+  position: fixed;
+  z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */
