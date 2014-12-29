@@ -33,17 +33,24 @@
       /**
       * Footer nav
       */
-      $(window).scroll(function() {
-        // get offset on scroll because flexslider initially loads height()=0
-        slides = $('#block-views-projects-block').height();
-
-        //console.log(offset, slides);
-        if ($(window).scrollTop() >= slides) {
-          $('#block-menu-menu-footer-nav').addClass('fixed');
+      $(window).load(function() {
+        function slideHt(){
+          slides = $('#block-views-projects-block').height();
+          //console.log(offset, slides);
         }
-        else {
-          $('#block-menu-menu-footer-nav').removeClass('fixed');
-        }
+        $(window).resize(function(){
+          slideHt();
+        });
+        $(window).scroll(function() {
+          slideHt();
+          //console.log(offset, slides);
+          if ($(window).scrollTop() >= slides) {
+            $('#block-menu-menu-footer-nav').addClass('fixed');
+          }
+          else {
+            $('#block-menu-menu-footer-nav').removeClass('fixed');
+          }
+        });
       });
 
     }
