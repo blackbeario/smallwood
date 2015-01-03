@@ -1,12 +1,45 @@
 // Insert your styling here.
 #block-menu-menu-footer-nav {
-  #gradient > .horizontal-three-colors(@start-color: #142338; @mid-color: #263b57; @color-stop: 50%; @end-color: #0c192b);  bottom: 0;
+  #gradient > .horizontal-three-colors(@start-color: #142338; @mid-color: #263b57; @color-stop: 50%; @end-color: #0c192b);  
+  bottom: 0;
   width: 100%;
+  margin-bottom: 30px;
 
   &.fixed {
     bottom: auto;
     top: 0;
     position: fixed;
     z-index: 99;
+  }
+
+  ul.menu {
+    position: relative;
+
+    li {
+      float: right;
+      clear: both;
+      margin-right: 3em;
+      text-transform: uppercase;
+
+      a {
+        color: #ad9a62;
+      }
+
+      &.first {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        a {
+          background: url(../s+n.svg) no-repeat;
+          width: 100px;
+          height: 80px;
+          margin: 1.5em 0 0 4em;
+          padding: 0;
+          line-height: 500;
+          overflow: hidden;
+        }
+      }
+    }
   }
 }

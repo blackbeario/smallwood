@@ -6872,6 +6872,9 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   padding: 0;
   position: relative;
 }
+.main-container.buffed {
+  margin-top: 30px;
+}
 .masonry-item {
   margin-bottom: 10px;
   cursor: pointer;
@@ -6946,11 +6949,38 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff142338', endColorstr='#ff0c192b', GradientType=1);
   bottom: 0;
   width: 100%;
+  margin-bottom: 30px;
 }
 #block-menu-menu-footer-nav.fixed {
   bottom: auto;
   top: 0;
   position: fixed;
   z-index: 99;
+}
+#block-menu-menu-footer-nav ul.menu {
+  position: relative;
+}
+#block-menu-menu-footer-nav ul.menu li {
+  float: right;
+  clear: both;
+  margin-right: 3em;
+  text-transform: uppercase;
+}
+#block-menu-menu-footer-nav ul.menu li a {
+  color: #ad9a62;
+}
+#block-menu-menu-footer-nav ul.menu li.first {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#block-menu-menu-footer-nav ul.menu li.first a {
+  background: url(../s+n.svg) no-repeat;
+  width: 100px;
+  height: 80px;
+  margin: 1.5em 0 0 4em;
+  padding: 0;
+  line-height: 500;
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */

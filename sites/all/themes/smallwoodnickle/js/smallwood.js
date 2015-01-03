@@ -36,6 +36,9 @@
       $(window).load(function() {
         function slideHt(){
           slides = $('#block-views-projects-block').height();
+          nav = $('#block-menu-menu-footer-nav');
+          main = $('.main-container');
+          navHt = nav.height();
           //console.log(offset, slides);
         }
         $(window).resize(function(){
@@ -45,10 +48,12 @@
           slideHt();
           //console.log(offset, slides);
           if ($(window).scrollTop() >= slides) {
-            $('#block-menu-menu-footer-nav').addClass('fixed');
+            nav.addClass('fixed');
+            main.css('margin-top',navHt+30);
           }
           else {
-            $('#block-menu-menu-footer-nav').removeClass('fixed');
+            nav.removeClass('fixed');
+            main.css('margin-top',0);
           }
         });
       });
