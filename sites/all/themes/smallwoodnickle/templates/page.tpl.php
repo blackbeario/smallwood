@@ -167,3 +167,5 @@
 <footer class="footer container">
   <?php print render($page['footer']); ?>
 </footer>
+<script src="//use.typekit.net/sqm6xjk.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>

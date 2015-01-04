@@ -6918,7 +6918,7 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   display: none;
   color: #ffffff;
   background: #222222;
-  max-height: 274px;
+  max-height: 285px;
   overflow: scroll;
   opacity: 0;
   padding: 2em;
@@ -6942,11 +6942,7 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   margin-left: -2em;
 }
 #block-menu-menu-footer-nav {
-  background-image: -webkit-linear-gradient(left, #142338, #263b57 50%, #0c192b);
-  background-image: -o-linear-gradient(left, #142338, #263b57 50%, #0c192b);
-  background-image: linear-gradient(to right, #142338, #263b57 50%, #0c192b);
-  background-repeat: no-repeat;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff142338', endColorstr='#ff0c192b', GradientType=1);
+  background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
   bottom: 0;
   width: 100%;
   margin-bottom: 30px;
@@ -6963,11 +6959,19 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 #block-menu-menu-footer-nav ul.menu li {
   float: right;
   clear: both;
-  margin-right: 3em;
+  margin-right: 2em;
   text-transform: uppercase;
 }
 #block-menu-menu-footer-nav ul.menu li a {
   color: #ad9a62;
+  padding: 5px 15px;
+  transition: padding .2s ease;
+}
+#block-menu-menu-footer-nav ul.menu li a:hover,
+#block-menu-menu-footer-nav ul.menu li a:focus {
+  background: none;
+  color: #ffffff;
+  padding-right: 30px;
 }
 #block-menu-menu-footer-nav ul.menu li.first {
   position: absolute;
@@ -6982,5 +6986,11 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   padding: 0;
   line-height: 500;
   overflow: hidden;
+}
+#block-menu-menu-footer-nav ul.menu li:nth-child(2) {
+  padding-top: 1em;
+}
+#block-menu-menu-footer-nav ul.menu li.last {
+  padding-bottom: 1em;
 }
 /*# sourceMappingURL=style.css.map */
