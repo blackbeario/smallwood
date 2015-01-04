@@ -5,8 +5,23 @@
   bottom: 0;
   width: 100%;
   margin-bottom: 30px;
+  position: fixed;
+  top: 0;
+  height: 118px;
+  z-index: 1;
+
+  .not-front.logged-in & {
+    top: 23px;
+  }
+
+  .front & {
+    position: relative;
+  }
 
   &.fixed {
+    .logged-in & {
+      top: 23px;
+    }
     bottom: auto;
     top: 0;
     position: fixed;

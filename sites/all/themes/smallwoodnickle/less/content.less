@@ -5,9 +5,12 @@
 	position: relative;
 }
 
-.main-container.buffed {
-	margin-top: 30px;
+.main-container {
+	.not-front & {
+	  margin-top: 98px;
+  }
 }
+
 .masonry-item {
 	margin-bottom: 10px;
 	cursor: pointer;
@@ -55,27 +58,32 @@
 	color: @body-bg;
 	background: @gray-darker;
 	max-height: 285px;
-	overflow: scroll;
 	opacity: 0;
-	padding: 2em;
 
 	&.masonry-item {
 		display: block;
 		opacity: 1;
 
-		.guts {
-			position:relative;
+		.shell {
+			height: inherit;
+			overflow: scroll;
+			padding: 1.5em;
+			position: relative;
 
 			&:before {
 				content: "";
-			   display: block;
-			   width: 0; 
-			   height: 0; 
-			   border-top: 12px solid transparent;
-			   border-bottom: 12px solid transparent;
-			   border-left: 12px solid #fff; 
-			   position: fixed;
-				margin-left: -2em;
+			  display: block;
+			  width: 0; 
+			  height: 0; 
+			  border-top: 12px solid transparent;
+			  border-bottom: 12px solid transparent;
+			  border-left: 12px solid #fff; 
+			  position: fixed;
+				margin-left: -1.5em;
+			}
+
+			.guts {
+				position:relative;
 			}
 		}
 	}

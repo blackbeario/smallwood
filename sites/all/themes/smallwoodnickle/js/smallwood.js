@@ -12,6 +12,7 @@
           bro = $(this).siblings(),
           cont = $('.masonry');
           $(this).removeClass('faded');
+          
 
           
         // Remove all appended bios from sibling masonry elements.
@@ -19,7 +20,7 @@
 
         // Clone the staff bio and insert after clicked staff with masonry class.
         if ($('.bio.masonry-item').length === 0) {
-          bio.clone().toggleClass('masonry-item').css({'left':w+10, 'width':w, 'height':h}).insertAfter(this);
+          bio.clone().toggleClass('masonry-item').css({'left':w+10, 'width':w, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
         }
         // Remove bio on second click if already inserted.
         else {
@@ -35,25 +36,26 @@
       */
       $(window).load(function() {
         function slideHt(){
-          slides = $('#block-views-projects-block').height();
-          nav = $('#block-menu-menu-footer-nav');
-          main = $('.main-container');
+          slides = $('#block-views-projects-block').height(),
+          nav = $('#block-menu-menu-footer-nav'),
+          main = $('.main-container'),
           navHt = nav.height();
-          //console.log(offset, slides);
         }
         $(window).resize(function(){
           slideHt();
         });
         $(window).scroll(function() {
           slideHt();
-          //console.log(offset, slides);
-          if ($(window).scrollTop() >= slides) {
-            nav.addClass('fixed');
-            main.css('margin-top',navHt+30);
-          }
-          else {
-            nav.removeClass('fixed');
-            main.css('margin-top',0);
+          // If front page.
+          if($('body.front').length){
+            if ($(window).scrollTop() >= slides) {
+              nav.addClass('fixed');
+              main.css('margin-top',navHt+30);
+            }
+            else {
+              nav.removeClass('fixed');
+              main.css('margin-top',0);
+            }
           }
         });
       });

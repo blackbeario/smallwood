@@ -6872,8 +6872,8 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   padding: 0;
   position: relative;
 }
-.main-container.buffed {
-  margin-top: 30px;
+.not-front .main-container {
+  margin-top: 98px;
 }
 .masonry-item {
   margin-bottom: 10px;
@@ -6919,18 +6919,19 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   color: #ffffff;
   background: #222222;
   max-height: 285px;
-  overflow: scroll;
   opacity: 0;
-  padding: 2em;
 }
 .bio.masonry-item {
   display: block;
   opacity: 1;
 }
-.bio.masonry-item .guts {
+.bio.masonry-item .shell {
+  height: inherit;
+  overflow: scroll;
+  padding: 1.5em;
   position: relative;
 }
-.bio.masonry-item .guts:before {
+.bio.masonry-item .shell:before {
   content: "";
   display: block;
   width: 0;
@@ -6939,19 +6940,35 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   border-bottom: 12px solid transparent;
   border-left: 12px solid #fff;
   position: fixed;
-  margin-left: -2em;
+  margin-left: -1.5em;
+}
+.bio.masonry-item .shell .guts {
+  position: relative;
 }
 #block-menu-menu-footer-nav {
   background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
   bottom: 0;
   width: 100%;
   margin-bottom: 30px;
+  position: fixed;
+  top: 0;
+  height: 118px;
+  z-index: 1;
+}
+.not-front.logged-in #block-menu-menu-footer-nav {
+  top: 23px;
+}
+.front #block-menu-menu-footer-nav {
+  position: relative;
 }
 #block-menu-menu-footer-nav.fixed {
   bottom: auto;
   top: 0;
   position: fixed;
   z-index: 99;
+}
+.logged-in #block-menu-menu-footer-nav.fixed {
+  top: 23px;
 }
 #block-menu-menu-footer-nav ul.menu {
   position: relative;
