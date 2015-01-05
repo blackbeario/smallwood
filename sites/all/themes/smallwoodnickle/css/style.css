@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 .strip {
   background: none;
   border: none;
@@ -6325,6 +6326,19 @@ ul.secondary {
 }
 .page-header {
   margin-top: 0;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  border-bottom: none;
+}
+@media screen and (min-width: 992px) {
+  .page-header {
+    font-size: 3em;
+  }
+}
+.page-header span {
+  font-size: .5em;
+  padding-bottom: .25em;
+  border-bottom: 1px solid;
 }
 .block:first-child h2.block-title {
   margin-top: 0;
@@ -6875,6 +6889,9 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 .not-front .main-container {
   margin-top: 98px;
 }
+/* ========================
+	Staff Masonry Block
+======================== */
 .masonry-item {
   margin-bottom: 10px;
   cursor: pointer;
@@ -6944,6 +6961,34 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 }
 .bio.masonry-item .shell .guts {
   position: relative;
+}
+/* ========================
+	About Page
+======================== */
+.page-about .page-header {
+  margin: 30px auto;
+  width: 80%;
+  line-height: 2;
+}
+@media screen and (min-width: 768px) {
+  .page-about .page-header {
+    width: 52%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about .page-header {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .page-about .page-header {
+    width: 40%;
+  }
+}
+.page-about .page-header span {
+  position: absolute;
+  top: 0;
+  left: 15px;
 }
 #block-menu-menu-footer-nav {
   background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
