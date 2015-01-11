@@ -49,11 +49,9 @@
           if($('.front').length){
             if ($(window).scrollTop() > navHeight) {
               nav.addClass('fixed');
-              main.css('margin-top',navHt+30);
             }
             else {
               nav.removeClass('fixed');
-              main.css('margin-top',0);
             }
           }
         });

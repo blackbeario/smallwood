@@ -6882,9 +6882,18 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   margin: 0;
   padding: 0;
   position: relative;
+  height: 100vh;
 }
-.not-front .main-container {
-  margin-top: 98px;
+.jumbotron .slides,
+.flexslider .slides {
+  height: 100%;
+}
+.jumbotron .slides *,
+.flexslider .slides * {
+  height: 100%;
+}
+.main-container {
+  margin-top: 2em;
 }
 /* ========================
 	Staff Masonry Block
