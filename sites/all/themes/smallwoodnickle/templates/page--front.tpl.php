@@ -73,6 +73,11 @@
  * @ingroup themeable
  */
 ?>
+
+<nav class="nav sticky" role="navigation">
+  <?php print $footer_nav; ?>
+</nav>
+
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
     <div class="navbar-header">

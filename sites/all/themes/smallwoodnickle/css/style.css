@@ -6192,9 +6192,6 @@ html.js .autocomplete-throbber {
 html.js .autocomplete-throbber.throbbing {
   background-position: 100% -18px;
 }
-body {
-  position: relative;
-}
 body.admin-expanded.admin-vertical.admin-nw .navbar,
 body.admin-expanded.admin-vertical.admin-sw .navbar {
   margin-left: 260px;
@@ -6990,58 +6987,56 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   top: 0;
   left: 15px;
 }
-#block-menu-menu-footer-nav {
+nav.sticky {
   background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
   bottom: 0;
   width: 100%;
-  margin-bottom: 30px;
-  position: fixed;
-  top: 0;
+  position: absolute;
   height: 118px;
-  z-index: 1;
+  z-index: 999;
 }
-.not-front.logged-in #block-menu-menu-footer-nav {
+.not-front.logged-in nav.sticky {
   top: 23px;
 }
-.front #block-menu-menu-footer-nav {
-  position: relative;
-}
-#block-menu-menu-footer-nav.fixed {
+nav.sticky.fixed {
   bottom: auto;
   top: 0;
   position: fixed;
-  z-index: 99;
 }
-.logged-in #block-menu-menu-footer-nav.fixed {
+.logged-in nav.sticky.fixed {
   top: 23px;
 }
-#block-menu-menu-footer-nav ul.menu {
+nav.sticky ul.links {
   position: relative;
 }
-#block-menu-menu-footer-nav ul.menu li {
+nav.sticky ul.links li {
   float: right;
   clear: both;
   margin-right: 2em;
   text-transform: uppercase;
+  list-style: none;
+  line-height: 2;
 }
-#block-menu-menu-footer-nav ul.menu li a {
+nav.sticky ul.links li a {
   color: #ad9a62;
   padding: 5px 15px;
   transition: padding .2s ease;
+  font-family: 'Adobe Caslon', Times, serif;
 }
-#block-menu-menu-footer-nav ul.menu li a:hover,
-#block-menu-menu-footer-nav ul.menu li a:focus {
+nav.sticky ul.links li a:hover,
+nav.sticky ul.links li a:focus {
   background: none;
   color: #ffffff;
   padding-right: 30px;
 }
-#block-menu-menu-footer-nav ul.menu li.first {
+nav.sticky ul.links li.first {
   position: absolute;
   top: 0;
   left: 0;
 }
-#block-menu-menu-footer-nav ul.menu li.first a {
+nav.sticky ul.links li.first a {
   background: url(../s+n.svg) no-repeat;
+  display: block;
   width: 100px;
   height: 80px;
   margin: 1.5em 0 0 4em;
@@ -7049,10 +7044,10 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   line-height: 500;
   overflow: hidden;
 }
-#block-menu-menu-footer-nav ul.menu li:nth-child(2) {
+nav.sticky ul.links li:nth-child(2) {
   padding-top: 1em;
 }
-#block-menu-menu-footer-nav ul.menu li.last {
+nav.sticky ul.links li.last {
   padding-bottom: 1em;
 }
 /*# sourceMappingURL=style.css.map */

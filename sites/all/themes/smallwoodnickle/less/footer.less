@@ -1,21 +1,14 @@
-// Insert your styling here.
-#block-menu-menu-footer-nav {
-  // #gradient > .horizontal-three-colors(@start-color: #142338; @mid-color: #263b57; @color-stop: 50%; @end-color: #0c192b);
+// Sometimes it does help to browse bike websites. Reference code found at airbornebicycles.com.
+nav.sticky {
   background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
   bottom: 0;
   width: 100%;
-  margin-bottom: 30px;
-  position: fixed;
-  top: 0;
+  position: absolute;
   height: 118px;
-  z-index: 1;
+  z-index: 999;
 
   .not-front.logged-in & {
     top: 23px;
-  }
-
-  .front & {
-    position: relative;
   }
 
   &.fixed {
@@ -25,10 +18,9 @@
     bottom: auto;
     top: 0;
     position: fixed;
-    z-index: 99;
   }
 
-  ul.menu {
+  ul.links {
     position: relative;
 
     li {
@@ -36,11 +28,14 @@
       clear: both;
       margin-right: 2em;
       text-transform: uppercase;
+      list-style: none;
+      line-height: 2;
 
       a {
         color: @gold;
         padding: 5px 15px;
         transition: padding .2s ease;
+        font-family: 'Adobe Caslon', Times, serif;
 
         &:hover, &:focus {
           background: none;
@@ -56,6 +51,7 @@
 
         a {
           background: url(../s+n.svg) no-repeat;
+          display: block;
           width: 100px;
           height: 80px;
           margin: 1.5em 0 0 4em;

@@ -12,9 +12,7 @@
           bro = $(this).siblings(),
           cont = $('.masonry');
           $(this).removeClass('faded');
-          
-
-          
+                    
         // Remove all appended bios from sibling masonry elements.
         bro.addClass('faded').next('.bio.masonry-item').remove();
 
@@ -35,20 +33,21 @@
       * Footer nav
       */
       $(window).load(function() {
-        function slideHt(){
-          slides = $('#block-views-projects-block').height(),
-          nav = $('#block-menu-menu-footer-nav'),
+        function stickyMenu(){
           main = $('.main-container'),
+          nav = $('nav.sticky'),
+          navOffset = nav.offset().top,
           navHt = nav.height();
+          navHeight = $(window).height() - navHt;
         }
         $(window).resize(function(){
-          slideHt();
+          stickyMenu();
         });
         $(window).scroll(function() {
-          slideHt();
+          stickyMenu();
           // If front page.
-          if($('body.front').length){
-            if ($(window).scrollTop() >= slides) {
+          if($('.front').length){
+            if ($(window).scrollTop() > navHeight) {
               nav.addClass('fixed');
               main.css('margin-top',navHt+30);
             }
