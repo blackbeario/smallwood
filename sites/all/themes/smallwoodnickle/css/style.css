@@ -6192,6 +6192,9 @@ html.js .autocomplete-throbber {
 html.js .autocomplete-throbber.throbbing {
   background-position: 100% -18px;
 }
+body {
+  overflow-x: hidden;
+}
 body.admin-expanded.admin-vertical.admin-nw .navbar,
 body.admin-expanded.admin-vertical.admin-sw .navbar {
   margin-left: 260px;
@@ -6254,7 +6257,7 @@ body #admin-menu .dropdown li {
 .front .navbar.container {
   position: absolute;
   width: 100%;
-  z-index: 98;
+  z-index: 998;
 }
 .navbar.container > .container {
   margin: 0;
@@ -6876,7 +6879,7 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 /* ========================
   Slideshow
 ======================== */
-.main-slider {
+.cycle-slideshow {
   background: none;
   border: none;
   border-radius: 0;
@@ -6885,17 +6888,28 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   padding: 0;
   position: relative;
   height: 100vh;
+  overflow: hidden;
+  z-index: 1;
 }
-.main-slider .slides {
-  padding-left: 0;
-  height: 100%;
-}
-.main-slider .slides .slide {
+.cycle-slideshow .slide {
   height: 100%;
   width: 100%;
   background-size: cover;
   background-position: 50% 50%;
   margin: 0 auto;
+  overflow: hidden;
+}
+.cycle-slideshow .cycle-prev,
+.cycle-slideshow .cycle-next {
+  position: absolute;
+  top: 0px;
+  width: 30%;
+  z-index: 800;
+  height: 100%;
+  cursor: pointer;
+}
+.cycle-slideshow .cycle-next {
+  right: 0px;
 }
 .main-container {
   margin-top: 2em;

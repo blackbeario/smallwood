@@ -5,7 +5,7 @@
         /**
         * Replace slideshow style attr string for backgrounds.
         **/
-        $('.slides .slide').each(function(){
+        $('.cycle-slideshow .slide').each(function(){
           if ($(window).width() <= 480 ) {
             $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files/styles/slide_480/public'));
           }
@@ -16,6 +16,7 @@
             $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files'));
           }
         });
+
 
         /**
         * Toggle the visibility of the staff bios.

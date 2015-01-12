@@ -119,7 +119,6 @@
 </header>
 
 <!-- Drupal EFQ ref:http://www.wentsch.me/flexslider-drupal-using-entity-field-query-efq -->
-<figure class="main-slider">
   <?php                  
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
@@ -131,16 +130,20 @@
     $nodes = node_load_multiple(array_keys($result['node']));
     ?>
 
-    <ul class="slides"> 
-    <?php foreach ($nodes as $slide) : ?>
-      <?php $slider_image = field_view_field('node', $slide, 'field_project_image', 'default'); ?>
-        <div class="slide img-responsive" style="background-image:url('<?php print render($slide->field_project_image['und'][0]['uri']); ?>')"></div>
-    <?php endforeach; ?>
-    </ul>        
-</figure><!-- /.main-slider -->
+<div class="cycle-slideshow" 
+  data-cycle-log="false"
+  data-cycle-fx="scrollHorz"
+  data-cycle-speed="500">
+  <!-- prev/next links -->
+  <div class="cycle-prev"></div>
+  <div class="cycle-next"></div>
+  <?php foreach ($nodes as $slide) : ?>
+    <?php $slider_image = field_view_field('node', $slide, 'field_project_image', 'default'); ?>
+      <img class="slide" style="background-image:url(<?php print render($slide->field_project_image['und'][0]['uri']); ?>)"/>
+  <?php endforeach; ?>
+</div>
 
 <div class="main-container container">
-
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
@@ -191,3 +194,4 @@
 </footer>
 <script src="//use.typekit.net/sqm6xjk.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
+<?php drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.min.js'); ?>
