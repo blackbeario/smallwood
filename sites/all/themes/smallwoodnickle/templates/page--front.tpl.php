@@ -118,9 +118,26 @@
   </div>
 </header>
 
-<?php if (!empty($page['highlighted'])): ?>
-  <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-<?php endif; ?>
+<!-- Drupal EFQ ref:http://www.wentsch.me/flexslider-drupal-using-entity-field-query-efq -->
+<figure class="main-slider">
+  <?php                  
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('status', 1)
+      ->propertyCondition('type', array('project'))
+      ->propertyOrderBy('created', 'DESC')
+      ->range(0, 5);
+    $result = $query->execute();
+    $nodes = node_load_multiple(array_keys($result['node']));
+    ?>
+
+    <ul class="slides"> 
+    <?php foreach ($nodes as $slide) : ?>
+      <?php $slider_image = field_view_field('node', $slide, 'field_project_image', 'default'); ?>
+        <div class="slide img-responsive" style="background-image:url('<?php print render($slide->field_project_image['und'][0]['uri']); ?>')"></div>
+    <?php endforeach; ?>
+    </ul>        
+</figure><!-- /.main-slider -->
 
 <div class="main-container container">
 

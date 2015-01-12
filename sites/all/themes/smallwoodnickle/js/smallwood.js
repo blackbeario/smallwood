@@ -1,6 +1,21 @@
 (function ($) {
    Drupal.behaviors.smallwood = {
       attach:function() {
+        
+        /**
+        * Replace slideshow style attr string for backgrounds.
+        **/
+        $('.slides .slide').each(function(){
+          if ($(window).width() <= 480 ) {
+            $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files/styles/slide_480/public'));
+          }
+          if (($(window).width() <= 768) && ($(window).width() > 480)) {
+            $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files/styles/slide_768/public'));
+          }
+          if ($(window).width() > 768) {
+            $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files'));
+          }
+        });
 
         /**
         * Toggle the visibility of the staff bios.
