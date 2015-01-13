@@ -132,8 +132,11 @@
 
 <div class="cycle-slideshow" 
   data-cycle-log="false"
-  data-cycle-fx="scrollHorz"
-  data-cycle-speed="500">
+  data-cycle-fx="fadeout"
+  data-cycle-speed="500"
+  data-cycle-loader="wait"
+  data-cycle-swipe="true"
+  data-cycle-swipe-fx="scrollHorz">
   <!-- prev/next links -->
   <div class="cycle-prev"></div>
   <div class="cycle-next"></div>
@@ -195,3 +198,4 @@
 <script src="//use.typekit.net/sqm6xjk.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
 <?php drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.min.js'); ?>
+<?php drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.swipe.min.js'); ?>
