@@ -1,6 +1,6 @@
 
 /* ========================
-  Slideshow
+  Home Slideshow
 ======================== */
 .cycle-slideshow {
 	.strip;
@@ -11,10 +11,10 @@
 
   .slide {
     height: 100%;
-    width: 100%;
+    width: 101%; // fix 1px edge on screen
     background-size: cover;
     background-position: 50% 50%;
-    margin: 0 auto;
+    margin: 0 -1px; // fix 1px edge on screen
     overflow: hidden;
   }
 
@@ -37,6 +37,41 @@
 }
 
 /* ========================
+  Commercial Slideshows
+======================== */
+.field-slideshow-wrapper {
+  position: relative;
+
+  .field-slideshow {
+    width: 100% !important;
+
+    .field-slideshow-slide {
+      width: 100% !important;
+
+      img {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 0px;
+    width: 5%;
+    z-index: 800;
+    height: 100%;
+    cursor: pointer;
+    background: rgba(255,255,255,0.5);
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .next {
+    right: 0px;
+  }
+}
+
+/* ========================
 	Staff Masonry Block
 ======================== */
 .masonry-item {
@@ -48,14 +83,17 @@
 	}
 
 	&.Staff {
-		width: 24%;
+		width: 47.5%;
 
 		@media @normal {
 			width: 24%;
 		}
 	}
 	&.Partner {
-		width: 49%;
+		width: 100%; 
+    .img-responsive {
+      width: 99%;
+    }
 
 		@media @normal {
 			width: 49%;

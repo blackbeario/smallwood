@@ -75,33 +75,34 @@
         cont.masonry('reload');
       });
 
+
       /**
-      * Footer nav
+      * Stcky footer nav front page.
       */
-      $(window).load(function() {
-        function stickyMenu(){
-          main = $('.main-container'),
-          nav = $('nav.sticky'),
-          navOffset = nav.offset().top,
-          navHt = nav.height();
-          navHeight = $(window).height() - navHt;
-        }
-        $(window).resize(function(){
-          stickyMenu();
-        });
-        $(window).scroll(function() {
-          stickyMenu();
-          // If front page.
-          if($('.front').length){
+      if($('.front').length){
+        $(window).load(function() {
+          function stickyMenu(){
+            main = $('.main-container'),
+            nav = $('nav.sticky'),
+            navOffset = nav.offset().top,
+            navHt = nav.height();
+            navHeight = $(window).height() - navHt;
+          }
+          $(window).resize(function(){
+            stickyMenu();
+          });
+          $(window).scroll(function() {
+            stickyMenu();
+            // If front page.
             if ($(window).scrollTop() > navHeight) {
               nav.addClass('fixed');
             }
             else {
               nav.removeClass('fixed');
             }
-          }
+          });
         });
-      });
+      }
 
     }
   }

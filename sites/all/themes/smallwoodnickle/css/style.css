@@ -6518,6 +6518,14 @@ ul li.leaf {
 .tabs--secondary {
   margin: 0 0 10px;
 }
+ul {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
 .submitted {
   margin-bottom: 1em;
   font-style: italic;
@@ -6877,7 +6885,7 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   margin-top: 0;
 }
 /* ========================
-  Slideshow
+  Home Slideshow
 ======================== */
 .cycle-slideshow {
   background: none;
@@ -6893,10 +6901,10 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 }
 .cycle-slideshow .slide {
   height: 100%;
-  width: 100%;
+  width: 101%;
   background-size: cover;
   background-position: 50% 50%;
-  margin: 0 auto;
+  margin: 0 -1px;
   overflow: hidden;
 }
 .cycle-slideshow .cycle-prev,
@@ -6915,6 +6923,36 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   margin-top: 2em;
 }
 /* ========================
+  Commercial Slideshows
+======================== */
+.field-slideshow-wrapper {
+  position: relative;
+}
+.field-slideshow-wrapper .field-slideshow {
+  width: 100% !important;
+}
+.field-slideshow-wrapper .field-slideshow .field-slideshow-slide {
+  width: 100% !important;
+}
+.field-slideshow-wrapper .field-slideshow .field-slideshow-slide img {
+  width: 100% !important;
+}
+.field-slideshow-wrapper .prev,
+.field-slideshow-wrapper .next {
+  position: absolute;
+  top: 0px;
+  width: 5%;
+  z-index: 800;
+  height: 100%;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  vertical-align: middle;
+}
+.field-slideshow-wrapper .next {
+  right: 0px;
+}
+/* ========================
 	Staff Masonry Block
 ======================== */
 .masonry-item {
@@ -6925,7 +6963,7 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   opacity: .5;
 }
 .masonry-item.Staff {
-  width: 24%;
+  width: 47.5%;
 }
 @media screen and (min-width: 992px) {
   .masonry-item.Staff {
@@ -6933,7 +6971,10 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   }
 }
 .masonry-item.Partner {
-  width: 49%;
+  width: 100%;
+}
+.masonry-item.Partner .img-responsive {
+  width: 99%;
 }
 @media screen and (min-width: 992px) {
   .masonry-item.Partner {
