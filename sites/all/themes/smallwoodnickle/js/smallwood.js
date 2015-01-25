@@ -66,10 +66,10 @@
             $('body').animate({scrollTop:bOffset-n-10},500);
           }
 
-          $(this).removeClass('faded');
+          $(this).removeClass('faded').addClass('active');
 
           // Remove all appended bios from sibling masonry elements.
-          bro.addClass('faded').click(function(e){e.preventDefault();}).next('.bio.masonry-item').remove();
+          bro.addClass('faded').next('.bio.masonry-item').remove();
 
           // Clone the staff bio and insert after clicked staff with masonry class.
           if (($(window).width() <= 768) && ($(this).hasClass('Staff'))) {
@@ -88,6 +88,7 @@
             else {
               $('.bio.masonry-item').remove();
               bro.removeClass('faded');
+              $('.team').removeClass('active');
             }
             // Reinit the masonry function to re-order the items.
             cont.masonry('reload');
@@ -96,13 +97,20 @@
 
           if (($(window).width() > 768) || ($(this).hasClass('Partner'))) {
             if (bl === 0) {
-              bio.clone().toggleClass('masonry-item').css({'left':w+10, 'width':w, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
-              scroll();            
+              if ($(this).hasClass('Staff')) {
+                bio.clone().toggleClass('masonry-item').addClass('Staff').css({'left':w+10, 'width':w*2+10, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
+                scroll();
+              }
+              else {
+                bio.clone().toggleClass('masonry-item').addClass('Partner').css({'left':w+10, 'width':w-8, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
+                scroll();
+              }          
             }
             // Remove bio on second click if already inserted.
             else {
               $('.bio.masonry-item').remove();
               bro.removeClass('faded');
+              $('.team').removeClass('active');
             }
             // Reinit the masonry function to re-order the items.
             cont.masonry('reload');
@@ -111,7 +119,7 @@
 
 
       /**
-      * Stcky footer nav front page.
+      * Sticky footer nav front page.
       */
       if($('.front').length){
         $(window).load(function() {

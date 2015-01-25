@@ -6960,7 +6960,16 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   cursor: pointer;
 }
 .masonry-item.faded {
-  opacity: .5;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.masonry-item img {
+  transition: all .2s ease;
+}
+.active.masonry-item img {
+  background: #f9f9f9;
+  box-shadow: 0 0 0.5em #222222 inset;
+  padding: 1.5em;
 }
 .masonry-item.Staff {
   width: 47.5%;
@@ -6978,7 +6987,7 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 }
 @media screen and (min-width: 992px) {
   .masonry-item.Partner {
-    width: 49%;
+    width: 49.5%;
   }
 }
 .masonry-item.Partner .title {
@@ -7002,7 +7011,6 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   color: #ffffff;
   background: #222222;
   opacity: 0;
-  max-height: 150px;
 }
 .bio.masonry-item {
   display: block;
@@ -7022,12 +7030,15 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 }
 @media screen and (min-width: 992px) {
   .bio.masonry-item .shell {
-    max-height: 224px;
+    max-height: 235px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .bio.masonry-item .shell {
+  .Staff.bio.masonry-item .shell {
     max-height: 274px;
+  }
+  .Partner.bio.masonry-item .shell {
+    max-height: 100%;
   }
 }
 .bio.masonry-item .shell:before {
@@ -7071,6 +7082,9 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   position: absolute;
   top: 0;
   left: 15px;
+}
+.page-about .block-system {
+  margin-top: 30px;
 }
 nav.sticky {
   background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;

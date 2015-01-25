@@ -79,30 +79,39 @@
 	cursor: pointer;
 
 	&.faded {
-		opacity: .5;
+		.opacity(.2);
 	}
+
+  img {
+    transition: all .2s ease;
+
+    .active& {
+      background: @f9;
+      box-shadow: 0 0 .5em @gray-darker inset;
+      padding: 1.5em;
+    }
+  }
 
 	&.Staff {
 		width: 47.5%;
-
 		@media @normal {
 			width: 24%;
 		}
 	}
+
 	&.Partner {
 		width: 100%; 
     .img-responsive {
       width: 99%;
     }
-
 		@media @normal {
-			width: 49%;
+			width: 49.5%;
 		}
-
 		.title {
 			font-size: 2em;
 		}
 	}
+
 	.title {
 		transform: rotate(-90deg);
 		position: absolute;
@@ -124,8 +133,6 @@
 	color: @body-bg;
 	background: @gray-darker;
 	opacity: 0;
-  max-height: 150px;
-
 
 	&.masonry-item {
 		display: block;
@@ -141,10 +148,15 @@
         max-height: 224px;
       }
       @media @normal {
-        max-height: 224px;
+        max-height: 235px;
       }
       @media @wide {
-        max-height: 274px;
+        .Staff& {
+          max-height: 274px;
+        }
+        .Partner& {
+          max-height: 100%;
+        }
       }
 
 			&:before {
@@ -169,24 +181,31 @@
 /* ========================
 	About Page
 ======================== */
-.page-about .page-header {
-  margin: 30px auto;
-  width: 80%;
-  line-height: 2;
+.page-about {
 
-  @media @tablet {
-  	width: 52%;
-  }
-  @media @normal {
-  	width: 45%;
-  }
-  @media @wide {
-  	width: 40%;
+  .page-header {
+    margin: 30px auto;
+    width: 80%;
+    line-height: 2;
+
+    @media @tablet {
+    	width: 52%;
+    }
+    @media @normal {
+    	width: 45%;
+    }
+    @media @wide {
+    	width: 40%;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 15px;
+    }
   }
 
-  span {
-    position: absolute;
-    top: 0;
-    left: 15px;
+  .block-system {
+    margin-top: 30px;
   }
 }
