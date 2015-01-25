@@ -76,11 +76,11 @@
             if (bl === 0) {
               if ($(this).is('.Staff:even')) {
                 nextStaff = $(this).next('.Staff');
-                bio.clone().toggleClass('masonry-item').css({'left':0, 'width':'99%', 'height':h}).insertAfter(nextStaff).find('.guts').wrap("<div class='shell'></div>");
+                bio.clone().toggleClass('masonry-item').addClass('Staff').css({'left':0, 'width':'99%', 'height':h}).insertAfter(nextStaff).find('.guts').wrap("<div class='shell'></div>");
                 scroll();
               }
               else {
-                bio.clone().toggleClass('masonry-item').css({'left':0, 'width':'99%', 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
+                bio.clone().toggleClass('masonry-item').addClass('Staff').css({'left':0, 'width':'99%', 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
                 scroll();
               }
             }

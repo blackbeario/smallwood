@@ -93,7 +93,7 @@
   }
 
 	&.Staff {
-		width: 47.5%;
+		width: 48.5%;
 		@media @normal {
 			width: 24%;
 		}
@@ -140,17 +140,26 @@
 
       &:before {
         content: "";
-        border-top: 13px solid transparent;
-        border-bottom: 13px solid transparent;
-        border-left: 13px solid @wht; 
+        border-top: 13px solid @wht;
+        border-right: 13px solid transparent;
+        border-left: 13px solid transparent; 
         position: absolute;
-        left: 0px;
-        top: 50%;
-        margin-top: -6px;
+        left: 50%;
+        top: 0;
+        margin-left: -12px;
+
+        @media @normal {
+          border-top: 13px solid transparent;
+          border-bottom: 13px solid transparent;
+          border-left: 13px solid @wht; 
+          left: 0px;
+          top: 50%;
+          margin-top: -6px;
+        }
 
         .Partner& {
           top: 25%;
-
+          /* change arrow for Jim Nickle */
           .Partner:nth-child(odd) + & {
             border-left: none;
             border-right: 13px solid @wht;

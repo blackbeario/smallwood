@@ -6972,7 +6972,7 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   padding: 1em;
 }
 .masonry-item.Staff {
-  width: 47.5%;
+  width: 48.5%;
 }
 @media screen and (min-width: 992px) {
   .masonry-item.Staff {
@@ -7018,16 +7018,27 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 }
 .bio.masonry-item:before {
   content: "";
-  border-top: 13px solid transparent;
-  border-bottom: 13px solid transparent;
-  border-left: 13px solid #ffffff;
+  border-top: 13px solid #ffffff;
+  border-right: 13px solid transparent;
+  border-left: 13px solid transparent;
   position: absolute;
-  left: 0px;
-  top: 50%;
-  margin-top: -6px;
+  left: 50%;
+  top: 0;
+  margin-left: -12px;
+}
+@media screen and (min-width: 992px) {
+  .bio.masonry-item:before {
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 13px solid #ffffff;
+    left: 0px;
+    top: 50%;
+    margin-top: -6px;
+  }
 }
 .Partner.bio.masonry-item:before {
   top: 25%;
+  /* change arrow for Jim Nickle */
 }
 .Partner:nth-child(odd) + .Partner.bio.masonry-item:before {
   border-left: none;
