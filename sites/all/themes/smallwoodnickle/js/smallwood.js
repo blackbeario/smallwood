@@ -54,20 +54,23 @@
         $('.team').click(function() {
           w = $(this).width(),
           h = $(this).height(),
+          l = $('.bio.masonry-item').length,
           bio = $('.bio',this),
           bro = $(this).siblings(),
           cont = $('.masonry'),
           bOffset = $(this).offset().top;
+
           
           $(this).removeClass('faded');
           $(window).scrollTop(bOffset);
+          console.log(l);
                     
           // Remove all appended bios from sibling masonry elements.
           bro.addClass('faded').next('.bio.masonry-item').remove();
 
           // Clone the staff bio and insert after clicked staff with masonry class.
           if (($(window).width() <= 768) && ($(this).hasClass('Staff'))) {
-            if ($('.bio.masonry-item').length === 0) {
+            if (l === 0) {
               if ($(this).is('.Staff:even')) {
                 nextStaff = $(this).next('.Staff');
                 bio.clone().toggleClass('masonry-item').css({'left':0, 'width':'99%', 'height':h}).insertAfter(nextStaff).find('.guts').wrap("<div class='shell'></div>");
@@ -87,7 +90,7 @@
         
 
           if (($(window).width() > 768) || ($(this).hasClass('Partner'))) {
-            if ($('.bio.masonry-item').length === 0) {
+            if (l === 0) {
               bio.clone().toggleClass('masonry-item').css({'left':w+10, 'width':w, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
             }
             // Remove bio on second click if already inserted.

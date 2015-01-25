@@ -7001,8 +7001,23 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   display: none;
   color: #ffffff;
   background: #222222;
-  max-height: 285px;
   opacity: 0;
+  max-height: 150px;
+}
+@media screen and (min-width: 768px) {
+  .bio {
+    max-height: 224px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bio {
+    max-height: 224px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bio {
+    max-height: 274px;
+  }
 }
 .bio.masonry-item {
   display: block;

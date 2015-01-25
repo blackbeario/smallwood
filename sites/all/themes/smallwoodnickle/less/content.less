@@ -123,8 +123,17 @@
 	display: none;
 	color: @body-bg;
 	background: @gray-darker;
-	max-height: 285px;
 	opacity: 0;
+  max-height: 150px;
+  @media @tablet {
+    max-height: 224px;
+  }
+  @media @normal {
+    max-height: 224px;
+  }
+  @media @wide {
+    max-height: 274px;
+  }
 
 	&.masonry-item {
 		display: block;
