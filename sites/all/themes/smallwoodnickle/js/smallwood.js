@@ -52,31 +52,36 @@
         * Toggle the visibility of the staff bios.
         */
         $('.team').click(function() {
+          // Variables
           w = $(this).width(),
           h = $(this).height(),
-          l = $('.bio.masonry-item').length,
+          n = $('.nav.sticky').height(),
+          bl = $('.bio.masonry-item').length,
           bio = $('.bio',this),
           bro = $(this).siblings(),
           cont = $('.masonry'),
           bOffset = $(this).offset().top;
 
-          
+          function scroll() {
+            $('body').animate({scrollTop:bOffset-n-10},500);
+          }
+
           $(this).removeClass('faded');
-          $(window).scrollTop(bOffset);
-          console.log(l);
-                    
+
           // Remove all appended bios from sibling masonry elements.
-          bro.addClass('faded').next('.bio.masonry-item').remove();
+          bro.addClass('faded').click(function(e){e.preventDefault();}).next('.bio.masonry-item').remove();
 
           // Clone the staff bio and insert after clicked staff with masonry class.
           if (($(window).width() <= 768) && ($(this).hasClass('Staff'))) {
-            if (l === 0) {
+            if (bl === 0) {
               if ($(this).is('.Staff:even')) {
                 nextStaff = $(this).next('.Staff');
                 bio.clone().toggleClass('masonry-item').css({'left':0, 'width':'99%', 'height':h}).insertAfter(nextStaff).find('.guts').wrap("<div class='shell'></div>");
+                scroll();
               }
               else {
                 bio.clone().toggleClass('masonry-item').css({'left':0, 'width':'99%', 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
+                scroll();
               }
             }
             // Remove bio if already inserted.
@@ -90,8 +95,9 @@
         
 
           if (($(window).width() > 768) || ($(this).hasClass('Partner'))) {
-            if (l === 0) {
+            if (bl === 0) {
               bio.clone().toggleClass('masonry-item').css({'left':w+10, 'width':w, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
+              scroll();            
             }
             // Remove bio on second click if already inserted.
             else {

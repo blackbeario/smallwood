@@ -7004,21 +7004,6 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   opacity: 0;
   max-height: 150px;
 }
-@media screen and (min-width: 768px) {
-  .bio {
-    max-height: 224px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .bio {
-    max-height: 224px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .bio {
-    max-height: 274px;
-  }
-}
 .bio.masonry-item {
   display: block;
   opacity: 1;
@@ -7028,6 +7013,22 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   overflow: scroll;
   padding: 1.5em;
   position: relative;
+  max-height: 150px;
+}
+@media screen and (min-width: 768px) {
+  .bio.masonry-item .shell {
+    max-height: 224px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bio.masonry-item .shell {
+    max-height: 224px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bio.masonry-item .shell {
+    max-height: 274px;
+  }
 }
 .bio.masonry-item .shell:before {
   content: "";

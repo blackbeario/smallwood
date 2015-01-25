@@ -125,15 +125,7 @@
 	background: @gray-darker;
 	opacity: 0;
   max-height: 150px;
-  @media @tablet {
-    max-height: 224px;
-  }
-  @media @normal {
-    max-height: 224px;
-  }
-  @media @wide {
-    max-height: 274px;
-  }
+
 
 	&.masonry-item {
 		display: block;
@@ -144,6 +136,16 @@
 			overflow: scroll;
 			padding: 1.5em;
 			position: relative;
+      max-height: 150px;
+      @media @tablet {
+        max-height: 224px;
+      }
+      @media @normal {
+        max-height: 224px;
+      }
+      @media @wide {
+        max-height: 274px;
+      }
 
 			&:before {
 				content: "";
