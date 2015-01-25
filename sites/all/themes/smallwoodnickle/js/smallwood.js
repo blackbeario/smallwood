@@ -18,7 +18,7 @@
         } */
 
         /**
-        * Replace slideshow style attr string for backgrounds.
+        * Responsive slideshow img paths.
         **/
         $('.cycle-slideshow .slide').each(function(){
           /* Mobile */
@@ -56,24 +56,49 @@
           h = $(this).height(),
           bio = $('.bio',this),
           bro = $(this).siblings(),
-          cont = $('.masonry');
+          cont = $('.masonry'),
+          bOffset = $(this).offset().top;
+          
           $(this).removeClass('faded');
+          $(window).scrollTop(bOffset);
                     
-        // Remove all appended bios from sibling masonry elements.
-        bro.addClass('faded').next('.bio.masonry-item').remove();
+          // Remove all appended bios from sibling masonry elements.
+          bro.addClass('faded').next('.bio.masonry-item').remove();
 
-        // Clone the staff bio and insert after clicked staff with masonry class.
-        if ($('.bio.masonry-item').length === 0) {
-          bio.clone().toggleClass('masonry-item').css({'left':w+10, 'width':w, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
-        }
-        // Remove bio on second click if already inserted.
-        else {
-          $('.bio.masonry-item').remove();
-          bro.removeClass('faded');
-        }
-        // Reinit the masonry function to re-order the items.
-        cont.masonry('reload');
-      });
+          // Clone the staff bio and insert after clicked staff with masonry class.
+          if (($(window).width() <= 768) && ($(this).hasClass('Staff'))) {
+            if ($('.bio.masonry-item').length === 0) {
+              if ($(this).is('.Staff:even')) {
+                nextStaff = $(this).next('.Staff');
+                bio.clone().toggleClass('masonry-item').css({'left':0, 'width':'99%', 'height':h}).insertAfter(nextStaff).find('.guts').wrap("<div class='shell'></div>");
+              }
+              else {
+                bio.clone().toggleClass('masonry-item').css({'left':0, 'width':'99%', 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
+              }
+            }
+            // Remove bio if already inserted.
+            else {
+              $('.bio.masonry-item').remove();
+              bro.removeClass('faded');
+            }
+            // Reinit the masonry function to re-order the items.
+            cont.masonry('reload');
+          }
+        
+
+          if (($(window).width() > 768) || ($(this).hasClass('Partner'))) {
+            if ($('.bio.masonry-item').length === 0) {
+              bio.clone().toggleClass('masonry-item').css({'left':w+10, 'width':w, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
+            }
+            // Remove bio on second click if already inserted.
+            else {
+              $('.bio.masonry-item').remove();
+              bro.removeClass('faded');
+            }
+            // Reinit the masonry function to re-order the items.
+            cont.masonry('reload');
+          }
+        });
 
 
       /**
