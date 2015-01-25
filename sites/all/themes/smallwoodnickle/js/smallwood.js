@@ -104,7 +104,7 @@
               else {
                 bio.clone().toggleClass('masonry-item').addClass('Partner').css({'left':w+10, 'width':w-8, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
                 scroll();
-              }          
+              }         
             }
             // Remove bio on second click if already inserted.
             else {

@@ -6967,9 +6967,9 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   transition: all .2s ease;
 }
 .active.masonry-item img {
-  background: #f9f9f9;
-  box-shadow: 0 0 0.5em #222222 inset;
-  padding: 1.5em;
+  background: #343434;
+  box-shadow: 0 0 1em #000000 inset;
+  padding: 1em;
 }
 .masonry-item.Staff {
   width: 47.5%;
@@ -7016,10 +7016,30 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   display: block;
   opacity: 1;
 }
+.bio.masonry-item:before {
+  content: "";
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-left: 13px solid #ffffff;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  margin-top: -6px;
+}
+.Partner.bio.masonry-item:before {
+  top: 25%;
+}
+.Partner:nth-child(odd) + .Partner.bio.masonry-item:before {
+  border-left: none;
+  border-right: 13px solid #ffffff;
+  left: auto;
+  right: 0;
+  top: 25%;
+}
 .bio.masonry-item .shell {
   height: inherit;
   overflow: scroll;
-  padding: 1.5em;
+  padding: 1.25em;
   position: relative;
   max-height: 150px;
 }
@@ -7040,17 +7060,6 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   .Partner.bio.masonry-item .shell {
     max-height: 100%;
   }
-}
-.bio.masonry-item .shell:before {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  border-left: 12px solid #fff;
-  position: fixed;
-  margin-left: -1.5em;
 }
 .bio.masonry-item .shell .guts {
   position: relative;

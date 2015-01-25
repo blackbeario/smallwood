@@ -86,9 +86,9 @@
     transition: all .2s ease;
 
     .active& {
-      background: @f9;
-      box-shadow: 0 0 .5em @gray-darker inset;
-      padding: 1.5em;
+      background: #343434;
+      box-shadow: 0 0 1em @blk inset;
+      padding: 1em;
     }
   }
 
@@ -138,10 +138,33 @@
 		display: block;
 		opacity: 1;
 
+      &:before {
+        content: "";
+        border-top: 13px solid transparent;
+        border-bottom: 13px solid transparent;
+        border-left: 13px solid @wht; 
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        margin-top: -6px;
+
+        .Partner& {
+          top: 25%;
+
+          .Partner:nth-child(odd) + & {
+            border-left: none;
+            border-right: 13px solid @wht;
+            left: auto;
+            right: 0;
+            top: 25%;
+          }
+        }
+      }
+
 		.shell {
 			height: inherit;
 			overflow: scroll;
-			padding: 1.5em;
+			padding: 1.25em;
 			position: relative;
       max-height: 150px;
       @media @tablet {
@@ -158,18 +181,6 @@
           max-height: 100%;
         }
       }
-
-			&:before {
-				content: "";
-			  display: block;
-			  width: 0; 
-			  height: 0; 
-			  border-top: 12px solid transparent;
-			  border-bottom: 12px solid transparent;
-			  border-left: 12px solid #fff; 
-			  position: fixed;
-				margin-left: -1.5em;
-			}
 
 			.guts {
 				position:relative;
