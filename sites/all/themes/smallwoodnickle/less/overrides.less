@@ -13,6 +13,13 @@
           box-shadow: @shadow;
 }
 
+// Custom classes.
+.emp {
+  font-family: @font-family-sans-serif;
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+
 html {
   &.overlay-open .navbar-fixed-top {
     z-index: 400;
@@ -51,10 +58,12 @@ body {
   // http://drupal.org/node/1870076
   // position: relative;
   overflow-x: hidden;
+  line-height: 2;
   &.admin-expanded.admin-vertical.admin-nw .navbar,
   &.admin-expanded.admin-vertical.admin-sw .navbar {
     margin-left: 260px;
   }
+
   // Add padding to body if various toolbar or navbars are fixed on top.
   &.navbar-is-fixed-top {
     padding-top: 64px !important;
@@ -207,7 +216,7 @@ ul.secondary {
 // Page header.
 .page-header {
   margin-top: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: @font-family-sans-serif;
   text-transform: uppercase;
   border-bottom: none;
   @media @normal{

@@ -90,8 +90,8 @@
 	}
 
 	&.Staff {
-		width: 48.5%;
-		@media @normal {
+		width: 48%;
+		@media @tablet {
 			width: 24%;
 		}
 	}
@@ -101,7 +101,7 @@
     .img-responsive {
       width: 99%;
     }
-		@media @normal {
+		@media @tablet {
 			width: 49.5%;
 		}
 		.title {
@@ -194,6 +194,7 @@
 
         a {
           font-size: 2em;
+          font-family: @font-family-sans-serif;
           text-transform: uppercase;
           color: @wht;
           margin-bottom: .25em;
@@ -205,16 +206,77 @@
 }
 
 /* ========================
+  Commercial - Residential Menu
+======================== */
+.banner {
+  margin-top: 3em;
+  position: relative;
+
+  .tel, .arch {
+    position: absolute;
+    left: -4.5em;
+    top: 5em;
+    .rotate(-90deg);
+    font: normal 1em @font-family-sans-serif;
+    color: @blue;
+    letter-spacing: .33em;
+    @media @tablet {
+      font-size: 1.5em;
+      left: -4em;
+    }
+  }  
+  .arch {
+    left: auto;
+    top: auto;
+    right: -3.25em;
+    bottom: 3.5em;
+    .rotate(90deg);
+    border-top: 1px solid;
+    font-size: .875em;
+    padding-top: .25em;
+    @media @tablet {
+      font-size: 1em;
+      right: -2.5em;
+    }
+  }
+  .bkg {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .nav {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+
+    .commercial, .residential {
+      display: table;
+      font: normal 3.5vw @font-family-sans-serif;
+      .text-uppercase;
+      color: @blue;
+      align-items: stretch;
+      .text-center;
+      margin: 17% 5% 17% 10%;
+      width: 35%;
+
+    }
+    .residential {
+      margin: 17% 5%;
+    }
+  }
+}
+
+/* ========================
 	About Page
 ======================== */
 .page-about {
 
   .page-header {
-    margin: 30px auto;
+    margin: 0;
     width: 80%;
     line-height: 2;
 
     @media @tablet {
+      margin: 30px auto;
     	width: 52%;
     }
     @media @normal {
@@ -225,10 +287,20 @@
     }
 
     span {
-      position: absolute;
-      top: 0;
-      left: 15px;
+      display: table;
+      margin-bottom: 1em;
+
+      @media @tablet {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
+  }
+
+  .region-content {
+    border-top: 1px solid @blue;
+    padding-top: 2em;
   }
 
   .block-system {

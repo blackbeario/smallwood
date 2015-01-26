@@ -25,9 +25,9 @@
         } */
 
         /**
-        * Responsive slideshow img paths.
+        * Responsive slideshow and front banner img paths.
         **/
-        $('.cycle-slideshow .slide').each(function(){
+        $('.slide').each(function(){
           /* Mobile */
           if ($(window).width() <= 480 ) {
             /* Check for retina devices. */
@@ -54,6 +54,22 @@
           }
         });
 
+        $('.bkg').each(function(){
+          $(this).attr('src',$(this).attr('src').replace('public:/','sites/default/files'));
+        });
+
+        function getBannerHt() {
+          bannerHt = $('.banner .bkg.img-responsive').height();
+          $('.banner nav.nav').css({'margin-top':-bannerHt,'height':bannerHt});
+        }
+
+        $(window).resize(function(){
+          getBannerHt();
+        });
+
+        $(window).load(function() {
+          getBannerHt();
+        });
 
         /**
         * Toggle the visibility of the staff bios.

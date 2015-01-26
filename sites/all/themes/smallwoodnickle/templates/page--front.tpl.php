@@ -119,7 +119,8 @@
   </div>
 </header>
 
-<!-- Drupal EFQ ref:http://www.wentsch.me/flexslider-drupal-using-entity-field-query-efq -->
+<section class="slideshow">
+  <!-- Drupal EFQ ref:http://www.wentsch.me/flexslider-drupal-using-entity-field-query-efq -->
   <?php                  
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
@@ -129,23 +130,44 @@
       ->range(0, 5);
     $result = $query->execute();
     $nodes = node_load_multiple(array_keys($result['node']));
-    ?>
+  ?>
 
-<div class="cycle-slideshow" 
-  data-cycle-log="false"
-  data-cycle-fx="fadeout"
-  data-cycle-speed="500"
-  data-cycle-loader="wait"
-  data-cycle-swipe="true"
-  data-cycle-swipe-fx="scrollHorz">
-  <!-- prev/next links -->
-  <div class="cycle-prev"></div>
-  <div class="cycle-next"></div>
-  <?php foreach ($nodes as $slide) : ?>
-    <?php $slider_image = field_view_field('node', $slide, 'field_project_image', 'default'); ?>
-      <img class="slide" style="background-image:url(<?php print render($slide->field_project_image['und'][0]['uri']); ?>)"/>
-  <?php endforeach; ?>
-</div>
+  <div class="cycle-slideshow" 
+    data-cycle-log="false"
+    data-cycle-fx="fadeout"
+    data-cycle-speed="500"
+    data-cycle-loader="wait"
+    data-cycle-swipe="true"
+    data-cycle-swipe-fx="scrollHorz">
+    <!-- prev/next links -->
+    <div class="cycle-prev"></div>
+    <div class="cycle-next"></div>
+    <?php foreach ($nodes as $slide) : ?>
+        <img class="slide" style="background-image:url(<?php print render($slide->field_project_image['und'][0]['uri']); ?>)"/>
+    <?php endforeach; ?>
+  </div>
+</section>
+
+<section class="banner container-fluid">
+  <?php                  
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('status', 1)
+      ->propertyCondition('type', array('banner'))
+      ->propertyOrderBy('created', 'DESC')
+      ->range(0, 5);
+    $result = $query->execute();
+    $nodes = node_load_multiple(array_keys($result['node']));
+  ?>
+
+    <?php foreach ($nodes as $banner) : ?>
+        <img class="bkg img-responsive" src="<?php print render($banner->field_background_image['und'][0]['uri']); ?>"/>
+        <div class="body">
+          <?php print render($banner->body['und'][0]['value']); ?>
+        </div>
+    <?php endforeach; ?>
+
+</section>
 
 <div class="main-container container">
   <header role="banner" id="page-header">
