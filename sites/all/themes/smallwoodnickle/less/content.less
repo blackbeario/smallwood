@@ -89,16 +89,6 @@
 		.opacity(.2);
 	}
 
-  img {
-    transition: all .2s ease;
-
-    .active& {
-      background: #343434;
-      box-shadow: 0 0 1em @blk inset;
-      padding: 1em;
-    }
-  }
-
 	&.Staff {
 		width: 48.5%;
 		@media @normal {
@@ -138,7 +128,7 @@
 .bio {
 	display: none;
 	color: @body-bg;
-	background: @gray-darker;
+	background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
 	opacity: 0;
 
 	&.masonry-item {
@@ -181,8 +171,9 @@
 		.shell {
 			height: inherit;
 			overflow: scroll;
-			padding: 1.25em;
+			padding: 2em;
 			position: relative;
+
       @media @tablet {
         max-height: 224px;
       }
@@ -200,6 +191,14 @@
 
 			.guts {
 				position:relative;
+
+        a {
+          font-size: 2em;
+          text-transform: uppercase;
+          color: @wht;
+          margin-bottom: .25em;
+          display: inline-block;
+        }
 			}
 		}
 	}

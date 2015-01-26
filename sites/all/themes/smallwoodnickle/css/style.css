@@ -6297,6 +6297,14 @@ body #admin-menu .dropdown li {
   padding-bottom: 36px;
   border-top: 1px solid #E5E5E5;
 }
+.close {
+  font-size: 32px;
+  font-weight: normal;
+  color: #ffffff;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  text-shadow: none;
+}
 .element-invisible {
   margin: 0;
   padding: 0;
@@ -7093,14 +7101,6 @@ nav.sticky ul.links li.last {
   opacity: 0.2;
   filter: alpha(opacity=20);
 }
-.masonry-item img {
-  transition: all .2s ease;
-}
-.active.masonry-item img {
-  background: #343434;
-  box-shadow: 0 0 1em #000000 inset;
-  padding: 1em;
-}
 .masonry-item.Staff {
   width: 48.5%;
 }
@@ -7139,7 +7139,7 @@ nav.sticky ul.links li.last {
 .bio {
   display: none;
   color: #ffffff;
-  background: #222222;
+  background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
   opacity: 0;
 }
 .bio.masonry-item {
@@ -7181,7 +7181,7 @@ nav.sticky ul.links li.last {
 .bio.masonry-item .shell {
   height: inherit;
   overflow: scroll;
-  padding: 1.25em;
+  padding: 2em;
   position: relative;
 }
 @media screen and (min-width: 768px) {
@@ -7204,6 +7204,13 @@ nav.sticky ul.links li.last {
 }
 .bio.masonry-item .shell .guts {
   position: relative;
+}
+.bio.masonry-item .shell .guts a {
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: .25em;
+  display: inline-block;
 }
 /* ========================
 	About Page

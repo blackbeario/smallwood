@@ -122,6 +122,12 @@
             // Reinit the masonry function to re-order the items.
             cont.masonry('reload');
           }
+          $('.close').click(function(){
+            $('.bio.masonry-item').remove();
+            bro.removeClass('faded');
+            $('.team').removeClass('active');
+            cont.masonry('reload');
+          });
         });
 
 
