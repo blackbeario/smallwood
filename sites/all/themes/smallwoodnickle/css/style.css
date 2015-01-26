@@ -7165,6 +7165,7 @@ nav.sticky ul.links li.last {
     left: 0px;
     top: 50%;
     margin-top: -6px;
+    margin-left: 0;
   }
   .Partner.bio.masonry-item:before {
     top: 25%;
