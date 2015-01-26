@@ -74,8 +74,17 @@
  */
 ?>
 
-<nav class="nav sticky" role="navigation">
-  <?php print $footer_nav; ?>
+<nav class="nav sticky">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  </button>
+  <a href="/" title="Smallwood+Nickle" class="sn">SN</a>
+  <nav class="navbar-collapse collapse" role="navigation">
+    <?php print $footer_nav; ?>
+  </nav>
 </nav>
 
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
@@ -90,18 +99,10 @@
       <?php if (!empty($site_name)): ?>
         <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
       <?php endif; ?>
-
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
     </div>
 
     <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="navbar-collapse collapse">
+      <div class="foobar navbar-collapse collapse">
         <nav role="navigation">
           <?php if (!empty($primary_nav)): ?>
             <?php print render($primary_nav); ?>

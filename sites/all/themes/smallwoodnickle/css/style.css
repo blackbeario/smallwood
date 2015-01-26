@@ -6885,6 +6885,128 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   margin-top: 0;
 }
 /* ========================
+  Navbar overrides
+======================== */
+.front .foobar,
+.front .navbar {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .front .foobar,
+  .front .navbar {
+    display: block;
+  }
+}
+nav.sticky {
+  background: url(../img/footer_bg.jpg) no-repeat 50% 0;
+  background-size: 100% 60px;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  height: 60px;
+  z-index: 999;
+}
+@media screen and (min-width: 768px) {
+  nav.sticky {
+    background-size: cover;
+    top: auto;
+    bottom: 0;
+    height: 118px;
+    position: absolute;
+  }
+}
+.not-front.logged-in nav.sticky {
+  top: 23px;
+}
+nav.sticky.fixed {
+  bottom: auto;
+  top: 0;
+  position: fixed;
+}
+.logged-in nav.sticky.fixed {
+  top: 23px;
+}
+nav.sticky .navbar-toggle {
+  position: absolute;
+  float: none;
+  right: 1em;
+  top: .4em;
+  z-index: 999;
+}
+@media screen and (min-width: 768px) {
+  nav.sticky .navbar-toggle {
+    top: 1em;
+  }
+}
+nav.sticky .navbar-toggle .icon-bar {
+  background: #ad9a62;
+}
+nav.sticky .navbar-collapse {
+  background: rgba(0, 0, 0, 0.5);
+  border-top: none;
+  box-shadow: none;
+  margin-top: 60px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  nav.sticky .navbar-collapse {
+    background: none;
+    float: right;
+    margin-top: 0;
+    width: auto;
+  }
+}
+nav.sticky .sn {
+  background: url(../s+n.svg) no-repeat;
+  display: block;
+  width: 100px;
+  height: 40px;
+  margin: 10px 0 0 4em;
+  padding: 0;
+  line-height: 500;
+  overflow: hidden;
+  float: left;
+}
+@media screen and (min-width: 768px) {
+  nav.sticky .sn {
+    height: 80px;
+    margin: 1.5em 0 0 4em;
+  }
+}
+nav.sticky ul.links {
+  position: relative;
+}
+nav.sticky ul.links li {
+  float: right;
+  clear: both;
+  text-transform: uppercase;
+  list-style: none;
+  line-height: 2;
+}
+@media screen and (min-width: 768px) {
+  nav.sticky ul.links li {
+    margin-right: 2em;
+  }
+}
+nav.sticky ul.links li a {
+  color: #ad9a62;
+  padding: 5px 15px;
+  transition: padding .2s ease;
+  font-family: 'Adobe Caslon', Times, serif;
+}
+nav.sticky ul.links li a:hover,
+nav.sticky ul.links li a:focus {
+  background: none;
+  color: #ffffff;
+  padding-right: 30px;
+}
+nav.sticky ul.links li:nth-child(1) {
+  padding-top: 1em;
+}
+nav.sticky ul.links li.last {
+  padding-bottom: 1em;
+}
+/* ========================
   Home Slideshow
 ======================== */
 .cycle-slideshow {
@@ -6894,10 +7016,18 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   box-shadow: none;
   margin: 0;
   padding: 0;
+  margin-top: 59px;
   position: relative;
   height: 100vh;
+  max-height: 300px;
   overflow: hidden;
   z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .cycle-slideshow {
+    max-height: 100%;
+    margin-top: 0;
+  }
 }
 .cycle-slideshow .slide {
   height: 100%;
@@ -7015,6 +7145,7 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 .bio.masonry-item {
   display: block;
   opacity: 1;
+  /* bio arrows */
 }
 .bio.masonry-item:before {
   content: "";
@@ -7035,24 +7166,22 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
     top: 50%;
     margin-top: -6px;
   }
-}
-.Partner.bio.masonry-item:before {
-  top: 25%;
-  /* change arrow for Jim Nickle */
-}
-.Partner:nth-child(odd) + .Partner.bio.masonry-item:before {
-  border-left: none;
-  border-right: 13px solid #ffffff;
-  left: auto;
-  right: 0;
-  top: 25%;
+  .Partner.bio.masonry-item:before {
+    top: 25%;
+  }
+  .Partner:nth-child(odd) + .Partner.bio.masonry-item:before {
+    border-left: none;
+    border-right: 13px solid #ffffff;
+    left: auto;
+    right: 0;
+    top: 25%;
+  }
 }
 .bio.masonry-item .shell {
   height: inherit;
   overflow: scroll;
   padding: 1.25em;
   position: relative;
-  max-height: 150px;
 }
 @media screen and (min-width: 768px) {
   .bio.masonry-item .shell {
@@ -7105,68 +7234,5 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 }
 .page-about .block-system {
   margin-top: 30px;
-}
-nav.sticky {
-  background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
-  bottom: 0;
-  width: 100%;
-  position: absolute;
-  height: 118px;
-  z-index: 999;
-}
-.not-front.logged-in nav.sticky {
-  top: 23px;
-}
-nav.sticky.fixed {
-  bottom: auto;
-  top: 0;
-  position: fixed;
-}
-.logged-in nav.sticky.fixed {
-  top: 23px;
-}
-nav.sticky ul.links {
-  position: relative;
-}
-nav.sticky ul.links li {
-  float: right;
-  clear: both;
-  margin-right: 2em;
-  text-transform: uppercase;
-  list-style: none;
-  line-height: 2;
-}
-nav.sticky ul.links li a {
-  color: #ad9a62;
-  padding: 5px 15px;
-  transition: padding .2s ease;
-  font-family: 'Adobe Caslon', Times, serif;
-}
-nav.sticky ul.links li a:hover,
-nav.sticky ul.links li a:focus {
-  background: none;
-  color: #ffffff;
-  padding-right: 30px;
-}
-nav.sticky ul.links li.first {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-nav.sticky ul.links li.first a {
-  background: url(../s+n.svg) no-repeat;
-  display: block;
-  width: 100px;
-  height: 80px;
-  margin: 1.5em 0 0 4em;
-  padding: 0;
-  line-height: 500;
-  overflow: hidden;
-}
-nav.sticky ul.links li:nth-child(2) {
-  padding-top: 1em;
-}
-nav.sticky ul.links li.last {
-  padding-bottom: 1em;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,13 @@
 (function ($) {
    Drupal.behaviors.smallwood = {
       attach:function() {
+
+        /**
+        * Navbar toggle overrides.
+        **/
+        $('.navbar-toggle').click(function(){
+          $(this).toggleClass('active');
+        });
         
         /*
         function isRetina() {
@@ -63,7 +70,7 @@
           bOffset = $(this).offset().top;
 
           function scroll() {
-            $('body').animate({scrollTop:bOffset-n-10},500);
+            $('html, body').animate({scrollTop:bOffset-n-10},500);
           }
 
           $(this).removeClass('faded').addClass('active');

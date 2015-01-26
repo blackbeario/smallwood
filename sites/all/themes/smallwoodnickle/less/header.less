@@ -1,1 +1,130 @@
-// Insert your styling here.
+/* ========================
+  Navbar overrides
+======================== */
+.front {
+  .foobar,
+  .navbar {
+    display: none;
+
+    @media @tablet {
+      display: block;
+    }
+  }
+}
+
+// Sometimes it does help to browse bike websites. Reference code found at airbornebicycles.com.
+nav.sticky {
+  background: url(../img/footer_bg.jpg) no-repeat 50% 0;
+  background-size: 100% 60px;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  height: 60px;
+  z-index: 999;
+
+  @media @tablet {
+    background-size: cover;
+    top: auto;
+    bottom: 0;
+    height: 118px;
+    position: absolute;
+  }
+
+  .not-front.logged-in & {
+    top: 23px;
+  }
+
+  &.fixed {
+    .logged-in & {
+      top: 23px;
+    }
+    bottom: auto;
+    top: 0;
+    position: fixed;
+  }
+
+  .navbar-toggle {
+    position: absolute;
+    float: none;
+    right: 1em;
+    top: .4em;
+    z-index: 999;
+
+    @media @tablet {
+      top: 1em;
+    }
+
+    .icon-bar {
+      background: @gold;
+    }
+  }
+
+  .navbar-collapse {
+    background: rgba(0,0,0,0.5);
+    border-top: none;
+    box-shadow: none;
+    margin-top: 60px;
+    width: 100%;
+
+    @media @tablet {
+      background: none;
+      float: right;
+      margin-top: 0;
+      width: auto;
+    }
+  }
+
+  .sn {
+    background: url(../s+n.svg) no-repeat;
+    display: block;
+    width: 100px;
+    height: 40px;
+    margin: 10px 0 0 4em;
+    padding: 0;
+    line-height: 500;
+    overflow: hidden;
+    float: left;
+    @media @tablet {
+      height: 80px;
+      margin: 1.5em 0 0 4em;
+    }
+  }
+
+  ul.links {
+    position: relative;
+
+    li {
+      float: right;
+      clear: both;
+      text-transform: uppercase;
+      list-style: none;
+      line-height: 2;
+
+      @media @tablet {
+        margin-right: 2em;
+      }
+
+      a {
+        color: @gold;
+        padding: 5px 15px;
+        transition: padding .2s ease;
+        font-family: 'Adobe Caslon', Times, serif;
+
+        &:hover, &:focus {
+          background: none;
+          color: @menu-link;
+          padding-right: 30px;
+        }
+      }
+
+      &:nth-child(1){
+        padding-top: 1em;
+      }
+
+      &.last{
+        padding-bottom: 1em;
+      }
+
+    }
+  }
+}
