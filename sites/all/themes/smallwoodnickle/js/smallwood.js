@@ -95,7 +95,7 @@
           bro.addClass('faded').next('.bio.masonry-item').remove();
 
           // Clone the staff bio and insert after clicked staff with masonry class.
-          if (($(window).width() <= 768) && ($(this).hasClass('Staff'))) {
+          if (($(window).width() <= 991) && ($(this).hasClass('Staff'))) {
             if (bl === 0) {
               if ($(this).is('.Staff:even')) {
                 nextStaff = $(this).next('.Staff');
@@ -118,7 +118,7 @@
           }
         
 
-          if (($(window).width() > 768) || ($(this).hasClass('Partner'))) {
+          if (($(window).width() > 991) || ($(this).hasClass('Partner'))) {
             if (bl === 0) {
               if ($(this).hasClass('Staff')) {
                 bio.clone().toggleClass('masonry-item').addClass('Staff').css({'left':w+10, 'width':w*2+10, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
