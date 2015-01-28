@@ -91,9 +91,9 @@
 
 	&.Staff {
 		width: 48%;
-		@media @tablet {
-			width: 24%;
-		}
+    @media @normal {
+      width: 24%;
+    }
 	}
 
 	&.Partner {
@@ -102,8 +102,11 @@
       width: 99%;
     }
 		@media @tablet {
-			width: 49.5%;
+			width: 98.5%;
 		}
+    @media @normal {
+      width: 49.5%;
+    }
 		.title {
 			font-size: 2em;
 		}
@@ -143,7 +146,7 @@
         border-left: 13px solid transparent; 
         position: absolute;
         left: 50%;
-        top: 0;
+        top: -1px;
         margin-left: -12px;
 
         @media @normal {
@@ -153,7 +156,7 @@
           left: 0px;
           top: 50%;
           margin-top: -6px;
-          margin-left: 0;
+          margin-left: -1px;
         
           .Partner& {
             top: 25%;
@@ -161,7 +164,7 @@
               border-left: none;
               border-right: 13px solid @wht;
               left: auto;
-              right: 0;
+              right: -1px;
               top: 25%;
             }
           }
@@ -174,31 +177,34 @@
 			padding: 2em;
 			position: relative;
 
-      @media @tablet {
+   /*   @media @tablet {
         max-height: 224px;
       }
       @media @normal {
         max-height: 235px;
-      }
+      } 
       @media @wide {
         .Staff& {
           max-height: 274px;
         }
         .Partner& {
           max-height: 100%;
-        }
-      }
+        } 
+      } */
 
 			.guts {
 				position:relative;
 
         a {
-          font-size: 2em;
+          font-size: 1.25em;
           font-family: @font-family-sans-serif;
           text-transform: uppercase;
           color: @wht;
           margin-bottom: .25em;
           display: inline-block;
+          @media @tablet {
+            font-size: 2em;
+          }
         }
 			}
 		}
@@ -215,14 +221,13 @@
   .tel, .arch {
     position: absolute;
     left: -4.5em;
-    top: 5em;
+    top: 4.5em;
     .rotate(-90deg);
-    font: normal .875em @font-family-sans-serif;
+    font: normal .75em @font-family-sans-serif;
     color: @blue;
     letter-spacing: .33em;
     @media @tablet {
       font-size: 1.5em;
-      left: -4em;
     }
   }  
   .arch {
@@ -232,7 +237,7 @@
     bottom: 3.5em;
     .rotate(90deg);
     border-top: 1px solid;
-    font-size: .75em;
+    font-size: .65em;
     padding-top: .25em;
     @media @tablet {
       font-size: 1em;
@@ -249,7 +254,7 @@
     width: 90%;
 
     .commercial, .residential {
-      display: table;
+      display: inline-block;
       font: normal 3.5vw @font-family-sans-serif;
       .text-uppercase;
       color: @blue;

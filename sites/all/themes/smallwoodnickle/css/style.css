@@ -7110,7 +7110,7 @@ nav.sticky ul.links li.last {
 .masonry-item.Staff {
   width: 48%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .masonry-item.Staff {
     width: 24%;
   }
@@ -7122,6 +7122,11 @@ nav.sticky ul.links li.last {
   width: 99%;
 }
 @media screen and (min-width: 768px) {
+  .masonry-item.Partner {
+    width: 98.5%;
+  }
+}
+@media screen and (min-width: 992px) {
   .masonry-item.Partner {
     width: 49.5%;
   }
@@ -7160,7 +7165,7 @@ nav.sticky ul.links li.last {
   border-left: 13px solid transparent;
   position: absolute;
   left: 50%;
-  top: 0;
+  top: -1px;
   margin-left: -12px;
 }
 @media screen and (min-width: 992px) {
@@ -7171,7 +7176,7 @@ nav.sticky ul.links li.last {
     left: 0px;
     top: 50%;
     margin-top: -6px;
-    margin-left: 0;
+    margin-left: -1px;
   }
   .Partner.bio.masonry-item:before {
     top: 25%;
@@ -7180,7 +7185,7 @@ nav.sticky ul.links li.last {
     border-left: none;
     border-right: 13px solid #ffffff;
     left: auto;
-    right: 0;
+    right: -1px;
     top: 25%;
   }
 }
@@ -7189,35 +7194,36 @@ nav.sticky ul.links li.last {
   overflow: scroll;
   padding: 2em;
   position: relative;
-}
-@media screen and (min-width: 768px) {
-  .bio.masonry-item .shell {
-    max-height: 224px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .bio.masonry-item .shell {
-    max-height: 235px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .Staff.bio.masonry-item .shell {
-    max-height: 274px;
-  }
-  .Partner.bio.masonry-item .shell {
-    max-height: 100%;
-  }
+  /*   @media @tablet {
+        max-height: 224px;
+      }
+      @media @normal {
+        max-height: 235px;
+      } 
+      @media @wide {
+        .Staff& {
+          max-height: 274px;
+        }
+        .Partner& {
+          max-height: 100%;
+        } 
+      } */
 }
 .bio.masonry-item .shell .guts {
   position: relative;
 }
 .bio.masonry-item .shell .guts a {
-  font-size: 2em;
+  font-size: 1.25em;
   font-family: 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   color: #ffffff;
   margin-bottom: .25em;
   display: inline-block;
+}
+@media screen and (min-width: 768px) {
+  .bio.masonry-item .shell .guts a {
+    font-size: 2em;
+  }
 }
 /* ========================
   Commercial - Residential Menu
@@ -7230,12 +7236,12 @@ nav.sticky ul.links li.last {
 .banner .arch {
   position: absolute;
   left: -4.5em;
-  top: 5em;
+  top: 4.5em;
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
   transform: rotate(-90deg);
-  font: normal 0.875em 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
+  font: normal 0.75em 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
   color: #20344e;
   letter-spacing: .33em;
 }
@@ -7243,7 +7249,6 @@ nav.sticky ul.links li.last {
   .banner .tel,
   .banner .arch {
     font-size: 1.5em;
-    left: -4em;
   }
 }
 .banner .arch {
@@ -7256,7 +7261,7 @@ nav.sticky ul.links li.last {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
   border-top: 1px solid;
-  font-size: .75em;
+  font-size: .65em;
   padding-top: .25em;
 }
 @media screen and (min-width: 768px) {
@@ -7276,7 +7281,7 @@ nav.sticky ul.links li.last {
 }
 .banner .nav .commercial,
 .banner .nav .residential {
-  display: table;
+  display: inline-block;
   font: normal 3.5vw 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   color: #20344e;
