@@ -271,6 +271,97 @@
 }
 
 /* ========================
+  News
+======================== */
+#block-views-news-block {
+  padding: 5em 0 3em;
+
+  .views-row {
+    display: block;
+    padding: 1em;
+    position: relative;
+
+    @media @tablet {
+      border-top: 1px solid @blue;
+    }
+
+    @media @normal {
+      float: left;
+      width: 33%;
+      border-left: 1px solid @blue;
+      border-top: none;
+      padding: 5em 3em 0;
+    }
+
+    .featured {
+      font: 300 .65em @font-family-sans-serif;
+      border-top: 1px solid;
+      padding-top: 1em;
+      width: 50%;
+      display: block;
+      text-align: right;
+      margin-left: -25%;
+
+      @media @tablet {
+        border-top: none;
+        padding-top: 0;
+        width: auto;
+        text-align: left;
+        margin-left: 0;
+      }
+
+      @media @normal {
+        .rotate(-90deg);
+        position: absolute;
+        top: 3.5em;
+        left: -2.5em;
+      }
+    }
+
+    .title {
+      font: 300 24px/1.5 @font-family-sans-serif;
+      .text-uppercase;
+      @media @normal {
+        font-size: 1.875vw;
+        min-height: 125px;
+      }
+    }
+
+    .news-body {
+      display: none;
+      @media @normal {
+        display: block;
+      }
+    }
+
+    .more a {
+      background: @blue;
+      padding: 1.5em 3em;
+      color: @wht;
+      margin: 2em 0 0;
+      display: inline-block;
+      font: 400 .75em @font-family-sans-serif;
+      .text-uppercase;
+    }
+
+    .tags{
+      .text-uppercase;
+      font-size: 75%;
+
+      .label {
+        color: inherit;
+        font-style: normal;
+        font: normal 1em @font-family-sans-serif;
+        padding-left: 0;
+      }
+    }
+
+  }
+
+
+}
+
+/* ========================
 	About Page
 ======================== */
 .page-about {

@@ -63,6 +63,12 @@ body {
   &.admin-expanded.admin-vertical.admin-sw .navbar {
     margin-left: 260px;
   }
+  a {
+    color: @blue;
+    &:hover, &:focus {
+      color: @gray-light;
+    }
+  }
 
   // Add padding to body if various toolbar or navbars are fixed on top.
   &.navbar-is-fixed-top {
@@ -139,8 +145,17 @@ body {
   .navbar-nav {
     float: right;
 
-    .front & li a {
-      color: #fff;
+    .front & li {
+      &.first {
+        display: none;
+      }
+
+      &.active a {
+        background: none;
+      }
+      a {
+        color: #fff;
+      }
     }
   }
 }
