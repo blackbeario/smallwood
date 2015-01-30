@@ -79,6 +79,33 @@
 }
 
 /* ========================
+  Intro Block
+======================== */
+#block-block-4 {
+  padding: 2em 1em 3em;
+  @media @normal {
+    display: flex;
+  }
+  .block-title {
+    font-size: @font-size-h4;
+    line-height: 1.5em;
+  }
+  p {
+    .text-justify;
+  }
+  @media @normal {
+    .block-title {
+      width: 35%;
+    }
+    p {
+      width: 65%;
+      padding-left: 2em;
+    }
+  }
+
+}
+
+/* ========================
 	Staff Masonry Block
 ======================== */
 .masonry-item {
@@ -249,20 +276,19 @@
     margin: 0 auto;
   }
   .nav {
-    display: flex;
+    display: table;
     margin: 0 auto;
     width: 90%;
 
     .commercial, .residential {
-      display: inline-block;
+      display: table-cell;
       font: normal 3.5vw @font-family-sans-serif;
       .text-uppercase;
       color: @blue;
-      align-items: stretch;
       .text-center;
       margin: 18% 5% 0 10%;
-      width: 35%;
-
+      width: 44%;
+      vertical-align: middle;
     }
     .residential {
       margin: 18% 5%;
@@ -275,6 +301,7 @@
 ======================== */
 #block-views-news-block {
   padding: 5em 0 3em;
+  display: table;
 
   .views-row {
     display: block;
@@ -286,7 +313,7 @@
     }
 
     @media @normal {
-      float: left;
+      display: table-cell;
       width: 33%;
       border-left: 1px solid @blue;
       border-top: none;

@@ -69,6 +69,10 @@ body {
       color: @gray-light;
     }
   }
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: @font-family-sans-serif;
+    .text-uppercase;
+  }
 
   // Add padding to body if various toolbar or navbars are fixed on top.
   &.navbar-is-fixed-top {
@@ -144,6 +148,16 @@ body {
 
   .navbar-nav {
     float: right;
+
+    li {
+      float: none;
+      .text-right;
+
+      a {
+        line-height: .5em;
+        .text-uppercase;
+      }
+    }
 
     .front & li {
       &.first {

@@ -6212,6 +6212,21 @@ body a:hover,
 body a:focus {
   color: #777777;
 }
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body .h1,
+body .h2,
+body .h3,
+body .h4,
+body .h5,
+body .h6 {
+  font-family: 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
 body.navbar-is-fixed-top {
   padding-top: 64px !important;
 }
@@ -6279,6 +6294,14 @@ body #admin-menu .dropdown li {
 }
 .navbar.container .navbar-nav {
   float: right;
+}
+.navbar.container .navbar-nav li {
+  float: none;
+  text-align: right;
+}
+.navbar.container .navbar-nav li a {
+  line-height: .5em;
+  text-transform: uppercase;
 }
 .front .navbar.container .navbar-nav li.first {
   display: none;
@@ -7110,6 +7133,33 @@ nav.sticky ul.links li.last {
   right: 0px;
 }
 /* ========================
+  Intro Block
+======================== */
+#block-block-4 {
+  padding: 2em 1em 3em;
+}
+@media screen and (min-width: 992px) {
+  #block-block-4 {
+    display: flex;
+  }
+}
+#block-block-4 .block-title {
+  font-size: 18px;
+  line-height: 1.5em;
+}
+#block-block-4 p {
+  text-align: justify;
+}
+@media screen and (min-width: 992px) {
+  #block-block-4 .block-title {
+    width: 35%;
+  }
+  #block-block-4 p {
+    width: 65%;
+    padding-left: 2em;
+  }
+}
+/* ========================
 	Staff Masonry Block
 ======================== */
 .masonry-item {
@@ -7288,20 +7338,20 @@ nav.sticky ul.links li.last {
   margin: 0 auto;
 }
 .banner .nav {
-  display: flex;
+  display: table;
   margin: 0 auto;
   width: 90%;
 }
 .banner .nav .commercial,
 .banner .nav .residential {
-  display: inline-block;
+  display: table-cell;
   font: normal 3.5vw 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   color: #20344e;
-  align-items: stretch;
   text-align: center;
   margin: 18% 5% 0 10%;
-  width: 35%;
+  width: 44%;
+  vertical-align: middle;
 }
 .banner .nav .residential {
   margin: 18% 5%;
@@ -7311,6 +7361,7 @@ nav.sticky ul.links li.last {
 ======================== */
 #block-views-news-block {
   padding: 5em 0 3em;
+  display: table;
 }
 #block-views-news-block .views-row {
   display: block;
@@ -7324,7 +7375,7 @@ nav.sticky ul.links li.last {
 }
 @media screen and (min-width: 992px) {
   #block-views-news-block .views-row {
-    float: left;
+    display: table-cell;
     width: 33%;
     border-left: 1px solid #20344e;
     border-top: none;
