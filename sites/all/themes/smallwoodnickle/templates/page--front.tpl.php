@@ -214,7 +214,8 @@
 
   </div>
 </div>
-<footer class="footer container">
+<footer class="container">
+  <div class="footer">
     <?php                  
       $query = new EntityFieldQuery();
       $query->entityCondition('entity_type', 'node')
@@ -232,6 +233,7 @@
         </div>
         <img class="bkg img-responsive" src="<?php print render($banner->field_background_image['und'][0]['uri']); ?>"/>
     <?php endforeach; ?>
+  </div>
 </footer>
 <script src="//use.typekit.net/sqm6xjk.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>

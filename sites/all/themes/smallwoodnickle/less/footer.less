@@ -1,102 +1,107 @@
 /* ========================
   Footer
 ======================== */
-footer.footer {
-  border-top: none;
-  font-family: @font-family-sans-serif;
-  display: table;
-  margin-top: 0;
-  padding-top: 0;
-  padding-bottom: 15px;
-
-  .body {
-    background-color: @blue;
-    color: @wht;
-    padding: 2em 1em 1em;
-    vertical-align: top;
-    position: relative;
-
+footer {
+  .footer {
+    border-top: none;
+    font-family: @font-family-sans-serif;
+    margin: 0 auto;
+    padding-top: 0;
+    padding-bottom: 15px;
     @media @tablet {
-      display: table-cell;
-      width: 50%;
+      display: inline-flex;
     }
-    a {
+
+    .body {
+      background-color: @blue;
       color: @wht;
-    }
-    .tel {
-      color: @gold;
-      width: 2%;
-      display: inline-block;
-      font-size: 3.75vw;
-      @media @tablet {
-        font-size: 20px;
-        line-height: 28px;
-      }
-      @media @normal {
-        font-size: 21px;
-        line-height: 40px;
-      }
-      @media @wide {
-        font-size: 28px;
-        line-height: 50px;
-      }
-    }
-    .addy {
-      width: 80%;
-      display: inline-block;
-      font-size: 4vw;
-      float: right;
-      .text-right;
-      .text-uppercase;
-      letter-spacing: .25em;
-      @media @tablet {
-        font-size: 16px;
-      }
-      @media @normal {
-        font-size: 21px;
-      }
-      @media @wide {
-        font-size: 26px;
-      }
-    }
-    .nav {
-      bottom: 1em;
-      right: 1em;
-      width: 100%;
-      .text-right;
+      padding: 2em 1em 1em;
+      vertical-align: top;
+      position: relative;
 
       @media @tablet {
-        position: absolute;
-      }
-      @media @tablet {
-        right: 2em;
+        width: 50%;
+        order: 2;
       }
       a {
+        color: @wht;
+      }
+      .tel {
+        color: @gold;
+        width: 2%;
         display: inline-block;
-        width: 44%;
-        .text-uppercase;
-        .text-right;
-        font-size: 2.25vw;
-        span{
-          font-family: @font-family-serif;
-        }
+        font-size: 3.75vw;
+        margin-top: 2em;
         @media @tablet {
-          font-size: 9px;
+          font-size: 20px;
+          line-height: 28px;
         }
         @media @normal {
-          font-size: 12px;
+          font-size: 21px;
+          line-height: 40px;
         }
         @media @wide {
-          font-size: 14px;
+          font-size: 28px;
+          line-height: 50px;
+        }
+      }
+      .addy {
+        width: 80%;
+        display: inline-block;
+        font-size: 4vw;
+        float: right;
+        .text-right;
+        .text-uppercase;
+        letter-spacing: .25em;
+        @media @tablet {
+          font-size: 16px;
+        }
+        @media @normal {
+          font-size: 21px;
+        }
+        @media @wide {
+          font-size: 26px;
+        }
+      }
+      .nav {
+        bottom: 1em;
+        right: 1em;
+        width: 100%;
+        .text-right;
+
+        @media @tablet {
+          position: absolute;
+        }
+        @media @tablet {
+          right: 2em;
+        }
+        a {
+          display: inline-block;
+          width: 44%;
+          .text-uppercase;
+          .text-right;
+          font-size: 2.25vw;
+          span{
+            font-family: @font-family-serif;
+          }
+          @media @tablet {
+            font-size: 9px;
+          }
+          @media @normal {
+            font-size: 12px;
+          }
+          @media @wide {
+            font-size: 14px;
+          }
         }
       }
     }
-  }
 
-  .bkg {
-    @media @tablet {
-      display: table-cell;
+    .bkg {
+      @media @tablet {
+        order: 1;
+        width: 50%;
+      }
     }
   }
-
 }

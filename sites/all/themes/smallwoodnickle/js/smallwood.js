@@ -25,7 +25,7 @@
         } */
 
         /**
-        * Responsive slideshow and front banner img paths.
+        * Responsive slideshow and front banner EFQ img paths.
         **/
         $('.slide').each(function(){
           /* Mobile */
@@ -61,6 +61,11 @@
         function getBannerHt() {
           bannerHt = $('.banner .bkg.img-responsive').height();
           $('.banner nav.nav').css({'margin-top':-bannerHt,'height':bannerHt});
+          
+          if ($(window).width() >= 768) {
+            footerHt = $('.footer .bkg.img-responsive').width();
+            $('.footer').css({'max-height':footerHt});
+          }
         }
 
         $(window).resize(function(){
