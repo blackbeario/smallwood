@@ -152,6 +152,7 @@
   <?php                  
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
+      ->entityCondition('entity_id', 11)
       ->propertyCondition('status', 1)
       ->propertyCondition('type', array('banner'))
       ->propertyOrderBy('created', 'DESC')
@@ -159,14 +160,12 @@
     $result = $query->execute();
     $nodes = node_load_multiple(array_keys($result['node']));
   ?>
-
-    <?php foreach ($nodes as $banner) : ?>
-        <img class="bkg img-responsive" src="<?php print render($banner->field_background_image['und'][0]['uri']); ?>"/>
-        <div class="body">
-          <?php print render($banner->body['und'][0]['value']); ?>
-        </div>
-    <?php endforeach; ?>
-
+  <?php foreach ($nodes as $banner) : ?>
+      <img class="bkg img-responsive" src="<?php print render($banner->field_background_image['und'][0]['uri']); ?>"/>
+      <div class="body">
+        <?php print render($banner->body['und'][0]['value']); ?>
+      </div>
+  <?php endforeach; ?>
 </section>
 
 <div class="main-container container">
@@ -216,7 +215,23 @@
   </div>
 </div>
 <footer class="footer container">
-  <?php print render($page['footer']); ?>
+    <?php                  
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'node')
+        ->entityCondition('entity_id', 16)
+        ->propertyCondition('status', 1)
+        ->propertyCondition('type', array('banner'))
+        ->propertyOrderBy('created', 'DESC')
+        ->range(0, 5);
+      $result = $query->execute();
+      $nodes = node_load_multiple(array_keys($result['node']));
+    ?>
+    <?php foreach ($nodes as $banner) : ?>
+        <div class="body">
+          <?php print render($banner->body['und'][0]['value']); ?>
+        </div>
+        <img class="bkg img-responsive" src="<?php print render($banner->field_background_image['und'][0]['uri']); ?>"/>
+    <?php endforeach; ?>
 </footer>
 <script src="//use.typekit.net/sqm6xjk.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>

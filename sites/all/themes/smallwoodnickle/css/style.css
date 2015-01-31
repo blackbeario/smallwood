@@ -7490,4 +7490,125 @@ nav.sticky ul.links li.last {
 .page-about .block-system {
   margin-top: 30px;
 }
+/* ========================
+  Footer
+======================== */
+footer.footer {
+  border-top: none;
+  font-family: 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
+  display: table;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 15px;
+}
+footer.footer .body {
+  background-color: #20344e;
+  color: #ffffff;
+  padding: 2em 1em 1em;
+  vertical-align: top;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  footer.footer .body {
+    display: table-cell;
+    width: 50%;
+  }
+}
+footer.footer .body a {
+  color: #ffffff;
+}
+footer.footer .body .tel {
+  color: #ad9a62;
+  width: 2%;
+  display: inline-block;
+  font-size: 3.75vw;
+}
+@media screen and (min-width: 768px) {
+  footer.footer .body .tel {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+@media screen and (min-width: 992px) {
+  footer.footer .body .tel {
+    font-size: 21px;
+    line-height: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  footer.footer .body .tel {
+    font-size: 28px;
+    line-height: 50px;
+  }
+}
+footer.footer .body .addy {
+  width: 80%;
+  display: inline-block;
+  font-size: 4vw;
+  float: right;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+}
+@media screen and (min-width: 768px) {
+  footer.footer .body .addy {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 992px) {
+  footer.footer .body .addy {
+    font-size: 21px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  footer.footer .body .addy {
+    font-size: 26px;
+  }
+}
+footer.footer .body .nav {
+  bottom: 1em;
+  right: 1em;
+  width: 100%;
+  text-align: right;
+}
+@media screen and (min-width: 768px) {
+  footer.footer .body .nav {
+    position: absolute;
+  }
+}
+@media screen and (min-width: 768px) {
+  footer.footer .body .nav {
+    right: 2em;
+  }
+}
+footer.footer .body .nav a {
+  display: inline-block;
+  width: 44%;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 2.25vw;
+}
+footer.footer .body .nav a span {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+@media screen and (min-width: 768px) {
+  footer.footer .body .nav a {
+    font-size: 9px;
+  }
+}
+@media screen and (min-width: 992px) {
+  footer.footer .body .nav a {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  footer.footer .body .nav a {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 768px) {
+  footer.footer .bkg {
+    display: table-cell;
+  }
+}
 /*# sourceMappingURL=style.css.map */
