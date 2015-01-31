@@ -218,7 +218,7 @@
     <?php                  
       $query = new EntityFieldQuery();
       $query->entityCondition('entity_type', 'node')
-        ->entityCondition('entity_id', 16)
+        ->entityCondition('entity_id', 15)
         ->propertyCondition('status', 1)
         ->propertyCondition('type', array('banner'))
         ->propertyOrderBy('created', 'DESC')
