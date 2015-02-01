@@ -177,3 +177,4 @@
 </footer>
 <script src="//use.typekit.net/sqm6xjk.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
+<?php drupal_add_js('sites/all/libraries/jquery.arctext/jquery.arctext.js'); ?>

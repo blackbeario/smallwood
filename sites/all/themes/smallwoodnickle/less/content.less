@@ -430,3 +430,98 @@
     margin-top: 30px;
   }
 }
+
+/* ========================
+  Residential View
+======================== */
+.view-projects.residential {
+  .tags, .body {
+    display: none;
+    @media @tablet {
+      display: block;
+    }
+  }
+
+  .views-row-odd, .views-row-even {
+    padding: 2em;
+  }
+
+  .head {
+    background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
+    color: @wht;
+    padding: 2em;
+    position: relative;
+    .text-center;
+    .text-uppercase;
+    letter-spacing: 4px;
+
+    &:before {
+      content: "";
+      border-top: 13px solid transparent;
+      border-right: 13px solid @wht;
+      border-bottom: 13px solid transparent; 
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -12px;
+    }
+
+    .title a {
+      font: normal .75em @font-family-sans-serif;
+      color: @wht;
+      display: block;
+      margin-bottom: 2em;
+      letter-spacing: 2px;
+    }
+
+    .counter {
+      font-size: 6em;
+      letter-spacing: 0;
+      line-height: 1.125em;
+      margin-top: -10px;
+    }
+
+    .uno, .dos {
+      font-size: 60%;
+
+      span{
+        &::before,
+        &::after {
+          content: "";
+          display: inline-block;
+          border-top: 1px solid @wht;
+          width: 1em;
+          margin: 3px 5px;
+        }
+      }
+    }
+    .dos span {
+      &::before,
+      &::after {
+          width: 2em;
+        }
+    }
+  }
+  .views-row-even {
+    background-color: @f6;
+
+    .head:before {
+      border-right: 13px solid transparent;
+      border-left: 13px solid @f6;
+      right: auto;
+      left: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

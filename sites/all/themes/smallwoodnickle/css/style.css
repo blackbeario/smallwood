@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 .strip {
   background: none;
@@ -7489,6 +7488,82 @@ nav.sticky ul.links li.last {
 }
 .page-about .block-system {
   margin-top: 30px;
+}
+/* ========================
+  Residential View
+======================== */
+.view-projects.residential .tags,
+.view-projects.residential .body {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .view-projects.residential .tags,
+  .view-projects.residential .body {
+    display: block;
+  }
+}
+.view-projects.residential .views-row-odd,
+.view-projects.residential .views-row-even {
+  padding: 2em;
+}
+.view-projects.residential .head {
+  background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
+  color: #ffffff;
+  padding: 2em;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.view-projects.residential .head:before {
+  content: "";
+  border-top: 13px solid transparent;
+  border-right: 13px solid #ffffff;
+  border-bottom: 13px solid transparent;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+}
+.view-projects.residential .head .title a {
+  font: normal 0.75em 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 2em;
+  letter-spacing: 2px;
+}
+.view-projects.residential .head .counter {
+  font-size: 6em;
+  letter-spacing: 0;
+  line-height: 1.125em;
+  margin-top: -10px;
+}
+.view-projects.residential .head .uno,
+.view-projects.residential .head .dos {
+  font-size: 60%;
+}
+.view-projects.residential .head .uno span::before,
+.view-projects.residential .head .dos span::before,
+.view-projects.residential .head .uno span::after,
+.view-projects.residential .head .dos span::after {
+  content: "";
+  display: inline-block;
+  border-top: 1px solid #ffffff;
+  width: 1em;
+  margin: 3px 5px;
+}
+.view-projects.residential .head .dos span::before,
+.view-projects.residential .head .dos span::after {
+  width: 2em;
+}
+.view-projects.residential .views-row-even {
+  background-color: #f6f6f6;
+}
+.view-projects.residential .views-row-even .head:before {
+  border-right: 13px solid transparent;
+  border-left: 13px solid #f6f6f6;
+  right: auto;
+  left: 0;
 }
 /* ========================
   Footer
