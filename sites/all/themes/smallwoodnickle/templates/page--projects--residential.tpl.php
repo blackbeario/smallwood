@@ -175,6 +175,16 @@
     <?php endforeach; ?>
   </div>
 </footer>
+<script type="text/javascript">
+  /**
+  * Acrtext.js for Residential page headers.
+  **/
+  (function ($) {
+    $(document).ready(function() {
+      $('.head .title a').arctext({radius: 125});
+    });
+   })(jQuery); 
+</script>
 <script src="//use.typekit.net/sqm6xjk.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
 <?php drupal_add_js('sites/all/libraries/jquery.arctext/jquery.arctext.js'); ?>
