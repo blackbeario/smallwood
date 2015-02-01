@@ -55,7 +55,7 @@
         });
 
         $('.bkg').each(function(){
-          $(this).attr('src',$(this).attr('src').replace('public:/','sites/default/files'));
+          $(this).attr('src',$(this).attr('src').replace('public:/','/sites/default/files'));
         });
 
         function getBannerHt() {
@@ -179,6 +179,11 @@
           });
         });
       }
+
+      /**
+      * Acrtext.js for Residential page headers.
+      **/
+      $('.head .title a').arctext({radius: 125})
 
     }
   }
