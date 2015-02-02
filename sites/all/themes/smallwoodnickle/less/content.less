@@ -457,12 +457,12 @@
       @media @tablet {
         .container {
           position: relative;
-          display: flex;
+          .flexbox();
         }
 
         .tags {
           display: block;
-          order: 2;
+          .order(2);
           .text-right;
           .text-uppercase;
           position: absolute;
@@ -478,13 +478,12 @@
           }
         }
         .img {
-          order: 1;
+          .order(1);
           width: 50%;
-          display: inline-table;
         }
         .tease {
           display: block;
-          order:4;
+          .order(4);
           font-size: smaller;
           line-height: 1.5;
           overflow: hidden;
@@ -505,7 +504,7 @@
         letter-spacing: 4px;
 
         @media @tablet {
-          order: 2;
+          .order(2);
           overflow: hidden;
           display: block;
           position: absolute;
@@ -594,17 +593,17 @@
 
       @media @tablet {
         .tease {
-          order: 1;
-          align-self: flex-end;
-          flex-shrink: 0;
+          .order(1);
+          .align-self(flex-end);
+          .flex-shrink(0);
           bottom: auto;
           right: auto;
           position: relative;
           padding: 0 2em 0 0;
         }
         .tags {
-          order: 2;
-          align-self: flex-start;
+          .order(2);
+          .align-self(flex-start);
           display: inline-table;
           top: auto;
           right: auto;
@@ -612,17 +611,17 @@
           padding-right: 2em;
         }
         .head {
-          order: 3;
-          align-self: flex-start;
-          flex-shrink: 0;
+          .order(3);
+          .align-self(flex-start);
+          .flex-shrink(0);
           bottom: auto;
           right: auto;
           position: relative;
         }
         .img {
-          order: 4;
-          align-self: flex-end;
-          flex-shrink: 0;
+          .order(4);
+          .align-self(flex-end);
+          .flex-shrink(0);
           margin-left: 6px;
         }
       }
