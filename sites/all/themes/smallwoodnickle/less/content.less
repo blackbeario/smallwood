@@ -434,90 +434,200 @@
 /* ========================
   Residential View
 ======================== */
-.view-projects.residential {
-  .tags, .body {
-    display: none;
-    @media @tablet {
-      display: block;
-    }
+.page-projects-residential {
+  .container-fluid {
+    padding: 0;
+    overflow-x: hidden;
   }
 
-  .views-row-odd, .views-row-even {
-    padding: 2em;
-  }
-
-  .head {
-    background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
-    color: @wht;
-    padding: 2em;
-    position: relative;
-    .text-center;
-    .text-uppercase;
-    letter-spacing: 4px;
-
-    &:before {
-      content: "";
-      border-top: 13px solid transparent;
-      border-right: 13px solid @wht;
-      border-bottom: 13px solid transparent; 
-      position: absolute;
-      right: 0;
-      top: 50%;
-      margin-top: -12px;
+  .view-projects.residential {
+    .tags, .tease {
+      display: none;
     }
+    .views-row-odd, .views-row-even {
+      padding: 2em 0;
 
-    .title a {
-      font: normal .75em @font-family-sans-serif;
-      color: @wht;
-      display: block;
-      margin-bottom: 2em;
-      letter-spacing: 2px;
-    }
+      @media @tablet {
+        .container {
+          position: relative;
+          display: flex;
+        }
 
-    .counter {
-      font-size: 6em;
-      letter-spacing: 0;
-      line-height: 1.125em;
-      margin-top: -10px;
-    }
+        .tags {
+          display: block;
+          order: 2;
+          .text-right;
+          .text-uppercase;
+          position: absolute;
+          top: 0;
+          right: 25%;
+          font-size: 75%;
+          span {
+            font: normal 1em @font-family-sans-serif;
+          }
+          a {
+            display: block;
+            font-style: italic;
+          }
+        }
+        .img {
+          order: 1;
+          width: 50%;
+          display: inline-table;
+        }
+        .tease {
+          display: block;
+          order:4;
+          font-size: smaller;
+          line-height: 1.5;
+          overflow: hidden;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          font-style: italic;
+          padding: 0 0 0 2em;
+        }
+      }
+      .head {
+        background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
+        color: @wht;
+        padding: 2em;
+        position: relative;
+        .text-center;
+        .text-uppercase;
+        letter-spacing: 4px;
 
-    .uno, .dos {
-      font-size: 60%;
-
-      span{
-        &::before,
-        &::after {
+        @media @tablet {
+          order: 2;
+          overflow: hidden;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 25%;
+        }
+        &:before {
           content: "";
-          display: inline-block;
-          border-top: 1px solid @wht;
-          width: 1em;
-          margin: 3px 5px;
+          border-top: 13px solid transparent;
+          border-right: 13px solid @wht;
+          border-bottom: 13px solid transparent; 
+          position: absolute;
+          right: 0;
+          top: 50%;
+          margin-top: -12px;
+        }
+        .title a {
+          font: normal .75em @font-family-sans-serif;
+          color: @wht;
+          display: block;
+          margin-bottom: 2em;
+          letter-spacing: 2px;
+          @media @tablet {
+            font-size: .5em;
+          }
+          @media @normal {
+            font-size: .75em;
+          }
+          @media @wide {
+            font-size: 1em;
+          }
+        }
+        .counter {
+          font-size: 6em;
+          letter-spacing: 0;
+          line-height: 1.125em;
+          margin-top: -10px;
+          @media @tablet {
+            font-size: 4.5em;
+          }
+          @media @normal {
+            font-size: 6em;
+          }
+          @media @wide {
+            font-size: 8em;
+          }
+        }
+        .uno, .dos {
+          font-size: 60%;
+          @media @tablet {
+            font-size: 39%;
+          }
+          @media @normal {
+            font-size: 60%;
+          }
+          @media @wide {
+            font-size: 70%;
+          }
+          span{
+            &::before,
+            &::after {
+              content: "";
+              display: inline-block;
+              border-top: 1px solid @wht;
+              width: 1em;
+              margin: 3px 5px;
+            }
+          }
+        }
+        .dos span {
+          &::before,
+          &::after {
+            width: 2em;
+          }
         }
       }
     }
-    .dos span {
-      &::before,
-      &::after {
-          width: 2em;
-        }
-    }
-  }
-  .views-row-even {
-    background-color: @f6;
+    .views-row-even {
+      background-color: @f6;
+      .head:before {
+        border-right: 13px solid transparent;
+        border-left: 13px solid @f6;
+        right: auto;
+        left: 0;
+      }
 
-    .head:before {
-      border-right: 13px solid transparent;
-      border-left: 13px solid @f6;
-      right: auto;
-      left: 0;
+      @media @tablet {
+        .tease {
+          order: 1;
+          align-self: flex-end;
+          flex-shrink: 0;
+          bottom: auto;
+          right: auto;
+          position: relative;
+          padding: 0 2em 0 0;
+        }
+        .tags {
+          order: 2;
+          align-self: flex-start;
+          display: inline-table;
+          top: auto;
+          right: auto;
+          position: relative;
+          padding-right: 2em;
+        }
+        .head {
+          order: 3;
+          align-self: flex-start;
+          flex-shrink: 0;
+          bottom: auto;
+          right: auto;
+          position: relative;
+        }
+        .img {
+          order: 4;
+          align-self: flex-end;
+          flex-shrink: 0;
+          margin-left: 6px;
+        }
+      }
     }
   }
 }
 
 
 
-
-
+/* ========================
+  Residential Detail
+======================== */
 
 
 

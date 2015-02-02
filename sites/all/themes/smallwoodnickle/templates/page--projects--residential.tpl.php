@@ -107,7 +107,7 @@
   <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
 <?php endif; ?>
 
-<div class="main-container container">
+<div class="main-container container-fluid">
 
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
@@ -181,7 +181,18 @@
   **/
   (function ($) {
     $(document).ready(function() {
-      $('.head .title a').arctext({radius: 125});
+      function textarc() {
+        if ($(window).width() < 992) {
+          $('.head .title a').arctext({radius: 125});
+        }
+        if ($(window).width() >= 992) {
+          $('.head .title a').arctext({radius: 150});
+        }
+      }
+      textarc();
+      $(window).resize(function(){
+        textarc();
+      });
     });
    })(jQuery); 
 </script>

@@ -65,6 +65,10 @@
           if ($(window).width() >= 768) {
             footerHt = $('.footer .bkg.img-responsive').width();
             $('.footer').css({'max-height':footerHt});
+
+            imgW = $('.residential .img').width();
+            $('.head, .tease, .views-row-even .tags').css({'height':imgW / 2, 'width':imgW / 2});
+            $('.views-row-even .tags').css({'margin-left':-imgW / 2})
           }
         }
 
