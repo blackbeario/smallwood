@@ -6949,18 +6949,22 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 nav.sticky {
   background: url(../img/footer_bg.jpg) no-repeat 50% 0;
   background-size: 100% 60px;
+  border-radius: 0;
   top: 0;
   width: 100%;
   position: fixed;
   height: 60px;
   z-index: 999;
+  margin-top: 0;
 }
 @media screen and (min-width: 768px) {
   nav.sticky {
     background-size: cover;
+    height: 118px;
+  }
+  .front nav.sticky {
     top: auto;
     bottom: 0;
-    height: 118px;
     position: absolute;
   }
 }
@@ -7100,6 +7104,14 @@ nav.sticky ul.links li.last {
 }
 .main-container {
   margin-top: 2em;
+}
+.not-front .main-container {
+  margin-top: 5em;
+}
+@media screen and (min-width: 768px) {
+  .not-front .main-container {
+    margin-top: 10em;
+  }
 }
 /* ========================
   Commercial Slideshows

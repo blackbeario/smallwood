@@ -16,18 +16,22 @@
 nav.sticky {
   background: url(../img/footer_bg.jpg) no-repeat 50% 0;
   background-size: 100% 60px;
+  border-radius: 0;
   top: 0;
   width: 100%;
   position: fixed;
   height: 60px;
   z-index: 999;
+  margin-top: 0;
 
   @media @tablet {
     background-size: cover;
-    top: auto;
-    bottom: 0;
     height: 118px;
-    position: absolute;
+    .front & {
+      top: auto;
+      bottom: 0;
+      position: absolute;
+    }
   }
 
   .not-front.logged-in & {
