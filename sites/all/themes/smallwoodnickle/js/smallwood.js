@@ -70,6 +70,9 @@
             $('.head, .tease, .views-row-even .tags').css({'height':imgW / 2, 'width':imgW / 2});
             $('.views-row-even .tags').css({'margin-left':-imgW / 2})
           }
+          else {
+            $('.head, .tease, .views-row-even .tags').css({'height':'auto','width':'auto'});
+          }
         }
 
         $(window).resize(function(){
