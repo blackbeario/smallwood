@@ -6964,8 +6964,7 @@ nav.sticky {
   }
   .front nav.sticky {
     top: auto;
-    bottom: 0;
-    position: absolute;
+    position: relative;
   }
 }
 .not-front.logged-in nav.sticky {
@@ -7034,7 +7033,7 @@ nav.sticky ul.links li {
   clear: both;
   text-transform: uppercase;
   list-style: none;
-  line-height: 2;
+  line-height: 1.65;
 }
 @media screen and (min-width: 768px) {
   nav.sticky ul.links li {
@@ -7054,10 +7053,7 @@ nav.sticky ul.links li a:focus {
   padding-right: 30px;
 }
 nav.sticky ul.links li:nth-child(1) {
-  padding-top: 1em;
-}
-nav.sticky ul.links li.last {
-  padding-bottom: 1em;
+  padding-top: .75em;
 }
 /* ========================
   Home Slideshow
@@ -7807,7 +7803,7 @@ nav.sticky ul.links li.last {
 footer .footer {
   border-top: none;
   font-family: 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
-  margin: 0 auto;
+  margin: 2em auto 0;
   padding-top: 0;
   padding-bottom: 15px;
 }

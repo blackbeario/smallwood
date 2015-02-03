@@ -74,19 +74,6 @@
  */
 ?>
 
-<nav class="nav sticky">
-  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-  <span class="sr-only">Toggle navigation</span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  </button>
-  <a href="/" title="Smallwood+Nickle" class="sn">SN</a>
-  <nav class="navbar-collapse collapse" role="navigation">
-    <?php print $footer_nav; ?>
-  </nav>
-</nav>
-
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
     <div class="navbar-header">
@@ -148,6 +135,19 @@
   </div>
 </section>
 
+<nav class="nav sticky">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  </button>
+  <a href="/" title="Smallwood+Nickle" class="sn">SN</a>
+  <nav class="navbar-collapse collapse" role="navigation">
+    <?php print $footer_nav; ?>
+  </nav>
+</nav>
+
 <section class="banner container-fluid">
   <?php                  
     $query = new EntityFieldQuery();
@@ -170,10 +170,6 @@
 
 <div class="main-container container">
   <header role="banner" id="page-header">
-    <?php if (!empty($site_slogan)): ?>
-      <p class="lead"><?php print $site_slogan; ?></p>
-    <?php endif; ?>
-
     <?php print render($page['header']); ?>
   </header> <!-- /#page-header -->
 
@@ -235,7 +231,5 @@
     <?php endforeach; ?>
   </div>
 </footer>
-<script src="//use.typekit.net/sqm6xjk.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
 <?php drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.min.js'); ?>
 <?php drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.swipe.min.js'); ?>

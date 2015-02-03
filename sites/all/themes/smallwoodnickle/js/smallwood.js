@@ -8,6 +8,13 @@
         $('.navbar-toggle').click(function(){
           $(this).toggleClass('active');
         });
+
+        $('.nav.sticky li.last a, .navbar-nav li.last a ').click(function(){
+          ftrOffset = $('footer .footer .body').offset().top;
+          $('html,body').animate({scrollTop:ftrOffset},500);
+          //$('html,body').animate({scrollTop:bOffset-n-10},500);
+          return false;
+        });
         
         /*
         function isRetina() {
@@ -86,7 +93,7 @@
         /**
         * Toggle the visibility of the staff bios.
         */
-        $('.team').click(function() {
+        $('.page-about .team').click(function() {
           // Variables
           w = $(this).width(),
           h = $(this).height(),
@@ -169,19 +176,23 @@
             nav = $('nav.sticky'),
             navOffset = nav.offset().top,
             navHt = nav.height();
-            navHeight = $(window).height() - navHt;
+            navHeight = $(window).height();
           }
           $(window).resize(function(){
             stickyMenu();
           });
           $(window).scroll(function() {
             stickyMenu();
-            // If front page.
-            if ($(window).scrollTop() > navHeight) {
-              nav.addClass('fixed');
-            }
-            else {
-              nav.removeClass('fixed');
+              if ($(window).width() > 768) {
+              // If front page.
+              if ($(window).scrollTop() > navHeight) {
+                nav.addClass('fixed');
+                $('.front .banner').css({'margin-top':navHt+40});
+              }
+              else {
+                nav.removeClass('fixed');
+                $('.front .banner').css({'margin-top':'3em'});
+              }
             }
           });
         });

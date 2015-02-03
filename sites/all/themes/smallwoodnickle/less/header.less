@@ -29,8 +29,7 @@ nav.sticky {
     height: 118px;
     .front & {
       top: auto;
-      bottom: 0;
-      position: absolute;
+      position: relative;
     }
   }
 
@@ -102,7 +101,7 @@ nav.sticky {
       clear: both;
       text-transform: uppercase;
       list-style: none;
-      line-height: 2;
+      line-height: 1.65;
 
       @media @tablet {
         margin-right: 2em;
@@ -122,13 +121,8 @@ nav.sticky {
       }
 
       &:nth-child(1){
-        padding-top: 1em;
+        padding-top: .75em;
       }
-
-      &.last{
-        padding-bottom: 1em;
-      }
-
     }
   }
 }
