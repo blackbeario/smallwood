@@ -50,6 +50,7 @@
   }
 }
 
+
 /* ========================
   Commercial Slideshows
 ======================== */
@@ -85,8 +86,9 @@
   }
 }
 
+
 /* ========================
-  Intro Block
+  Homepage Intro Block
 ======================== */
 #block-block-4 {
   padding: 2em 1em 3em;
@@ -111,6 +113,7 @@
   }
 
 }
+
 
 /* ========================
 	Staff Masonry Block
@@ -245,9 +248,10 @@
 	}
 }
 
-/* ========================
-  Commercial - Residential Menu
-======================== */
+
+/* ==============================
+  Commercial - Residential Banner
+============================== */
 .banner {
   margin-top: 3em;
   position: relative;
@@ -377,19 +381,6 @@
       font: 400 .75em @font-family-sans-serif;
       .text-uppercase;
     }
-
-    .tags{
-      .text-uppercase;
-      font-size: 75%;
-
-      .label {
-        color: inherit;
-        font-style: normal;
-        font: normal 1em @font-family-sans-serif;
-        padding-left: 0;
-      }
-    }
-
   }
 
 
@@ -464,14 +455,10 @@
           display: block;
           .order(2);
           .text-right;
-          .text-uppercase;
           position: absolute;
           top: 0;
           right: 25%;
-          font-size: 75%;
-          span {
-            font: normal 1em @font-family-sans-serif;
-          }
+
           a {
             display: block;
             font-style: italic;
@@ -630,12 +617,55 @@
 }
 
 
-
 /* ========================
   Residential Detail
 ======================== */
-
-
+.node-type-project {
+  h1.page-header{
+    display: none;
+  }
+  h1#title {
+    font-size: 2em;
+    .text-center;
+    @media @tablet {
+      display: inline-block;
+      .text-left;
+      padding-left: 1em;
+      width: 30%;
+      line-height: 1.5em;
+      vertical-align: top;
+    }
+  }
+  .tags {
+    display: none;
+    @media @tablet {
+      display: inline-block;
+      padding: 2.5em 2em;
+      width: 15%;
+      vertical-align: top;
+    }
+    .field-label {
+      display: none;
+    }
+  }
+  .desc {
+    padding: 2em;
+    .text-justify;
+    @media @tablet {
+      display: inline-block;
+      width: 50%;
+      line-height: 1.5em;
+    }
+  }
+  .photos {
+    .field-item {
+      padding: 1em 2em;
+    }
+    @media @tablet {
+      padding: 1em 4em;
+    }
+  }
+}
 
 
 

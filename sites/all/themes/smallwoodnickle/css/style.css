@@ -277,7 +277,7 @@ body {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #20344e;
+  color: #777777;
   background-color: #ffffff;
 }
 input,
@@ -2015,7 +2015,7 @@ select[multiple].input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #4570a8;
+  color: #b7b7b7;
 }
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -4606,7 +4606,7 @@ a.thumbnail.active {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #20344e;
+  color: #777777;
 }
 .alert {
   padding: 15px;
@@ -6171,6 +6171,16 @@ button.close {
   font-size: 1.25em;
   text-transform: uppercase;
 }
+.tags {
+  text-transform: uppercase;
+  font-size: 75%;
+}
+.tags .label,
+.tags .field-label {
+  color: #20344e;
+  font: bold 1em 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
+  padding: 0;
+}
 html.overlay-open .navbar-fixed-top {
   z-index: 400;
 }
@@ -6225,6 +6235,7 @@ body .h5,
 body .h6 {
   font-family: 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
+  color: #20344e;
 }
 body.navbar-is-fixed-top {
   padding-top: 64px !important;
@@ -6960,7 +6971,7 @@ nav.sticky {
 @media screen and (min-width: 768px) {
   nav.sticky {
     background-size: cover;
-    height: 118px;
+    height: auto;
   }
   .front nav.sticky {
     top: auto;
@@ -7055,6 +7066,9 @@ nav.sticky ul.links li a:focus {
 nav.sticky ul.links li:nth-child(1) {
   padding-top: .75em;
 }
+nav.sticky ul.links li.last {
+  margin-bottom: .75em;
+}
 /* ========================
   Home Slideshow
 ======================== */
@@ -7140,7 +7154,7 @@ nav.sticky ul.links li:nth-child(1) {
   right: 0px;
 }
 /* ========================
-  Intro Block
+  Homepage Intro Block
 ======================== */
 #block-block-4 {
   padding: 2em 1em 3em;
@@ -7295,9 +7309,9 @@ nav.sticky ul.links li:nth-child(1) {
     font-size: 2em;
   }
 }
-/* ========================
-  Commercial - Residential Menu
-======================== */
+/* ==============================
+  Commercial - Residential Banner
+============================== */
 .banner {
   margin-top: 3em;
   position: relative;
@@ -7445,16 +7459,6 @@ nav.sticky ul.links li:nth-child(1) {
   font: 400 0.75em 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
-#block-views-news-block .views-row .tags {
-  text-transform: uppercase;
-  font-size: 75%;
-}
-#block-views-news-block .views-row .tags .label {
-  color: inherit;
-  font-style: normal;
-  font: normal 1em 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
-  padding-left: 0;
-}
 /* ========================
 	About Page
 ======================== */
@@ -7531,15 +7535,9 @@ nav.sticky ul.links li:nth-child(1) {
     -webkit-order: 2;
     order: 2;
     text-align: right;
-    text-transform: uppercase;
     position: absolute;
     top: 0;
     right: 25%;
-    font-size: 75%;
-  }
-  .page-projects-residential .view-projects.residential .views-row-odd .tags span,
-  .page-projects-residential .view-projects.residential .views-row-even .tags span {
-    font: normal 1em 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
   }
   .page-projects-residential .view-projects.residential .views-row-odd .tags a,
   .page-projects-residential .view-projects.residential .views-row-even .tags a {
@@ -7795,6 +7793,59 @@ nav.sticky ul.links li:nth-child(1) {
     -webkit-flex-shrink: 0;
     flex-shrink: 0;
     margin-left: 6px;
+  }
+}
+/* ========================
+  Residential Detail
+======================== */
+.node-type-project h1.page-header {
+  display: none;
+}
+.node-type-project h1#title {
+  font-size: 2em;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .node-type-project h1#title {
+    display: inline-block;
+    text-align: left;
+    padding-left: 1em;
+    width: 30%;
+    line-height: 1.5em;
+    vertical-align: top;
+  }
+}
+.node-type-project .tags {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .node-type-project .tags {
+    display: inline-block;
+    padding: 2.5em 2em;
+    width: 15%;
+    vertical-align: top;
+  }
+}
+.node-type-project .tags .field-label {
+  display: none;
+}
+.node-type-project .desc {
+  padding: 2em;
+  text-align: justify;
+}
+@media screen and (min-width: 768px) {
+  .node-type-project .desc {
+    display: inline-block;
+    width: 50%;
+    line-height: 1.5em;
+  }
+}
+.node-type-project .photos .field-item {
+  padding: 1em 2em;
+}
+@media screen and (min-width: 768px) {
+  .node-type-project .photos {
+    padding: 1em 4em;
   }
 }
 /* ========================
