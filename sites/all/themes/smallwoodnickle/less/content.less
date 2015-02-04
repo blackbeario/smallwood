@@ -45,7 +45,7 @@
     margin-top: 5em;
 
     @media @tablet {
-      margin-top: 10em;
+      margin-top: 14em;
     }
   }
 }
@@ -93,7 +93,7 @@
 #block-block-4 {
   padding: 2em 1em 3em;
   @media @normal {
-    display: flex;
+    .flexbox();
   }
   .block-title {
     font-size: @font-size-h4;
@@ -214,21 +214,6 @@
 			padding: 2em;
 			position: relative;
 
-   /*   @media @tablet {
-        max-height: 224px;
-      }
-      @media @normal {
-        max-height: 235px;
-      } 
-      @media @wide {
-        .Staff& {
-          max-height: 274px;
-        }
-        .Partner& {
-          max-height: 100%;
-        } 
-      } */
-
 			.guts {
 				position:relative;
 
@@ -307,6 +292,176 @@
   }
 }
 
+/* ==============================
+  Commercial Page
+============================== */
+.page-projects-commercial {
+  h1.page-header {
+    padding-left: 1em;
+    line-height: 1.5em;
+  }
+  #block-block-5 {
+    padding-bottom: 4em;
+    .row .col-md-4 {
+      padding: 15px;
+      @media @tablet{
+        width: 33.33%;
+        float: left;
+      }
+      ul li {
+      list-style: none;
+      padding-left: 6em;
+      .text-uppercase;
+      font-size: smaller;
+      line-height: 2.5;
+
+        &.active:before {
+          content:"";
+          width: 1.5em;
+          display: inline-block;
+          border-top: 4px solid @blue;
+          vertical-align: super;
+          margin-left: -40px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  .view-projects.commercial {
+    .flexslider {
+      .strip();
+      @media @tablet {
+        .flex-direction-nav {
+          li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: rgba(255,255,255,.5);
+            z-index: 98;
+            width: 20px;
+
+            &:before{
+              font: italic smaller @font-family-serif;
+              position: absolute;
+              top: 50%;
+              height: 20px;
+              left: -35px;
+              width: 101px;
+              text-align: center;
+              z-index: 99;
+            }
+
+            &:nth-child(1):before {
+              content:"previous image";
+              transform: rotate(-90deg);
+            }
+             
+            &:nth-child(2){
+              right: 0;
+              left: auto;
+              &:before {
+                content:"next image";
+                transform: rotate(90deg);
+                left: auto;
+                right: -35px;
+              }
+            }
+          }
+
+          a {
+            display: block;
+            height: 100%;
+            top: 0;
+            margin: 0;
+            opacity: 1;
+            width: 30px;
+
+            &:before, &:after {
+              content:'';
+              position: absolute;
+              width: 10px;
+              background: rgba(255,255,255,.5);;
+              height: 52%;
+            }
+            &:before {
+              bottom: 51%;
+              right: 0;
+              -ms-transform: skewY(-45deg);
+              -webkit-transform: skewY(-45deg);
+              transform: skewY(-45deg);
+            }
+            &:after {
+              top: 51%;
+              right: 0;
+              -ms-transform: skewY(45deg);
+              -webkit-transform: skewY(45deg);
+              transform: skewY(45deg);
+            }
+
+            &.flex-prev {
+              left: 0;
+            }
+            &.flex-next {
+              right: 0;
+              &:before {
+                right: auto;
+                left: 0;
+                -ms-transform: skewY(45deg);
+                -webkit-transform: skewY(45deg);
+                transform: skewY(45deg);
+              }
+
+              &:after {
+                right: auto;
+                left: 0;
+                -ms-transform: skewY(-45deg);
+                -webkit-transform: skewY(-45deg);
+                transform: skewY(-45deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    h2.title {
+      font-size: 2em;
+      .text-center;
+      @media @tablet {
+        display: inline-block;
+        .text-left;
+        padding-left: 1em;
+        width: 30%;
+        line-height: 1.5em;
+        vertical-align: top;
+      }
+    }
+    .tags {
+      display: none;
+      @media @tablet {
+        display: inline-block;
+        width: 15%;
+        vertical-align: top;
+      }
+      .field-label {
+        display: none;
+      }
+    }
+    .desc {
+      padding: 2em;
+      .text-justify;
+      @media @tablet {
+        display: inline-block;
+        width: 50%;
+        line-height: 1.875em;
+      }
+    }
+  }
+}
+
+
 /* ========================
   News
 ======================== */
@@ -380,6 +535,10 @@
       display: inline-block;
       font: 400 .75em @font-family-sans-serif;
       .text-uppercase;
+    }
+
+    .tags a {
+      display: inline-block;
     }
   }
 
@@ -640,7 +799,6 @@
     display: none;
     @media @tablet {
       display: inline-block;
-      padding: 2.5em 2em;
       width: 15%;
       vertical-align: top;
     }

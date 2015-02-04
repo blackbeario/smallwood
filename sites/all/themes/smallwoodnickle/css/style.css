@@ -6174,12 +6174,19 @@ button.close {
 .tags {
   text-transform: uppercase;
   font-size: 75%;
+  padding: 2.5em 0 0 2em;
 }
 .tags .label,
 .tags .field-label {
   color: #20344e;
   font: bold 1em 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
   padding: 0;
+}
+.tags a {
+  display: block;
+}
+.desc {
+  font-size: 85%;
 }
 html.overlay-open .navbar-fixed-top {
   z-index: 400;
@@ -6236,6 +6243,7 @@ body .h6 {
   font-family: 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   color: #20344e;
+  letter-spacing: 5px;
 }
 body.navbar-is-fixed-top {
   padding-top: 64px !important;
@@ -6392,7 +6400,8 @@ ul.secondary {
 }
 @media screen and (min-width: 992px) {
   .page-header {
-    font-size: 3em;
+    font-size: 2.5em;
+    letter-spacing: 5px;
   }
 }
 .page-header span {
@@ -7120,7 +7129,7 @@ nav.sticky ul.links li.last {
 }
 @media screen and (min-width: 768px) {
   .not-front .main-container {
-    margin-top: 10em;
+    margin-top: 14em;
   }
 }
 /* ========================
@@ -7161,6 +7170,10 @@ nav.sticky ul.links li.last {
 }
 @media screen and (min-width: 992px) {
   #block-block-4 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
   }
 }
@@ -7278,20 +7291,6 @@ nav.sticky ul.links li.last {
   overflow: scroll;
   padding: 2em;
   position: relative;
-  /*   @media @tablet {
-        max-height: 224px;
-      }
-      @media @normal {
-        max-height: 235px;
-      } 
-      @media @wide {
-        .Staff& {
-          max-height: 274px;
-        }
-        .Partner& {
-          max-height: 100%;
-        } 
-      } */
 }
 .bio.masonry-item .shell .guts {
   position: relative;
@@ -7377,6 +7376,172 @@ nav.sticky ul.links li.last {
 .banner .nav .residential {
   margin: 18% 5%;
 }
+/* ==============================
+  Commercial Page
+============================== */
+.page-projects-commercial h1.page-header {
+  padding-left: 1em;
+  line-height: 1.5em;
+}
+.page-projects-commercial #block-block-5 {
+  padding-bottom: 4em;
+}
+.page-projects-commercial #block-block-5 .row .col-md-4 {
+  padding: 15px;
+}
+@media screen and (min-width: 768px) {
+  .page-projects-commercial #block-block-5 .row .col-md-4 {
+    width: 33.33%;
+    float: left;
+  }
+}
+.page-projects-commercial #block-block-5 .row .col-md-4 ul li {
+  list-style: none;
+  padding-left: 6em;
+  text-transform: uppercase;
+  font-size: smaller;
+  line-height: 2.5;
+}
+.page-projects-commercial #block-block-5 .row .col-md-4 ul li.active:before {
+  content: "";
+  width: 1.5em;
+  display: inline-block;
+  border-top: 4px solid #20344e;
+  vertical-align: super;
+  margin-left: -40px;
+  margin-right: 20px;
+}
+.page-projects-commercial .view-projects.commercial .flexslider {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 98;
+    width: 20px;
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav li:before {
+    font: italic smaller Georgia, "Times New Roman", Times, serif;
+    position: absolute;
+    top: 50%;
+    height: 20px;
+    left: -35px;
+    width: 101px;
+    text-align: center;
+    z-index: 99;
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav li:nth-child(1):before {
+    content: "previous image";
+    transform: rotate(-90deg);
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav li:nth-child(2) {
+    right: 0;
+    left: auto;
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav li:nth-child(2):before {
+    content: "next image";
+    transform: rotate(90deg);
+    left: auto;
+    right: -35px;
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav a {
+    display: block;
+    height: 100%;
+    top: 0;
+    margin: 0;
+    opacity: 1;
+    width: 30px;
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav a:before,
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav a:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    height: 52%;
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav a:before {
+    bottom: 51%;
+    right: 0;
+    -ms-transform: skewY(-45deg);
+    -webkit-transform: skewY(-45deg);
+    transform: skewY(-45deg);
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav a:after {
+    top: 51%;
+    right: 0;
+    -ms-transform: skewY(45deg);
+    -webkit-transform: skewY(45deg);
+    transform: skewY(45deg);
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav a.flex-prev {
+    left: 0;
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav a.flex-next {
+    right: 0;
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav a.flex-next:before {
+    right: auto;
+    left: 0;
+    -ms-transform: skewY(45deg);
+    -webkit-transform: skewY(45deg);
+    transform: skewY(45deg);
+  }
+  .page-projects-commercial .view-projects.commercial .flexslider .flex-direction-nav a.flex-next:after {
+    right: auto;
+    left: 0;
+    -ms-transform: skewY(-45deg);
+    -webkit-transform: skewY(-45deg);
+    transform: skewY(-45deg);
+  }
+}
+.page-projects-commercial .view-projects.commercial h2.title {
+  font-size: 2em;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .page-projects-commercial .view-projects.commercial h2.title {
+    display: inline-block;
+    text-align: left;
+    padding-left: 1em;
+    width: 30%;
+    line-height: 1.5em;
+    vertical-align: top;
+  }
+}
+.page-projects-commercial .view-projects.commercial .tags {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .page-projects-commercial .view-projects.commercial .tags {
+    display: inline-block;
+    width: 15%;
+    vertical-align: top;
+  }
+}
+.page-projects-commercial .view-projects.commercial .tags .field-label {
+  display: none;
+}
+.page-projects-commercial .view-projects.commercial .desc {
+  padding: 2em;
+  text-align: justify;
+}
+@media screen and (min-width: 768px) {
+  .page-projects-commercial .view-projects.commercial .desc {
+    display: inline-block;
+    width: 50%;
+    line-height: 1.875em;
+  }
+}
 /* ========================
   News
 ======================== */
@@ -7458,6 +7623,9 @@ nav.sticky ul.links li.last {
   display: inline-block;
   font: 400 0.75em 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
+}
+#block-views-news-block .views-row .tags a {
+  display: inline-block;
 }
 /* ========================
 	About Page
@@ -7821,7 +7989,6 @@ nav.sticky ul.links li.last {
 @media screen and (min-width: 768px) {
   .node-type-project .tags {
     display: inline-block;
-    padding: 2.5em 2em;
     width: 15%;
     vertical-align: top;
   }

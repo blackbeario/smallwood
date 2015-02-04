@@ -12,7 +12,6 @@
         $('.nav.sticky li.last a, .navbar-nav li.last a ').click(function(){
           ftrOffset = $('footer .footer .body').offset().top;
           $('html,body').animate({scrollTop:ftrOffset},500);
-          //$('html,body').animate({scrollTop:bOffset-n-10},500);
           return false;
         });
         
@@ -55,30 +54,41 @@
               $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files/styles/slide_768/public'));
             }
           }
-          /* Desktop */
           if ($(window).width() > 768) {
             $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files'));
           }
         });
 
+        /**
+        * Replace EFQ img paths.
+        **/
         $('.bkg').each(function(){
           $(this).attr('src',$(this).attr('src').replace('public:/','/sites/default/files'));
         });
 
+        /**
+        * Replace EFQ img paths. Set widths for flexbox elements.
+        **/
         function getBannerHt() {
           bannerHt = $('.banner .bkg.img-responsive').height();
           $('.banner nav.nav').css({'margin-top':-bannerHt,'height':bannerHt});
+
+          row = $('.view-projects.residential');
+          rowEven = $('.views-row-even', row);
+          imgW = $('.img',row).width();
           
           if ($(window).width() >= 768) {
+            /* set footer height for flexbox */
             footerHt = $('.footer .bkg.img-responsive').width();
             $('.footer').css({'max-height':footerHt});
 
-            imgW = $('.residential .img').width();
-            $('.head, .tease, .views-row-even .tags').css({'height':imgW / 2, 'width':imgW / 2});
-            $('.views-row-even .tags').css({'margin-left':-imgW / 2})
+            /* Set widths for flexbox elements */
+            $('.head, .tease').css({'height':imgW / 2, 'width':imgW / 2});
+            $('.tags',rowEven).css({'height':imgW / 2, 'width':imgW / 2, 'margin-left':-imgW / 2});
           }
           else {
-            $('.head, .tease, .views-row-even .tags').css({'height':'auto','width':'auto'});
+            $('.head, .tease').css({'height':'auto','width':'auto'});
+            $('.tags',rowEven).css({'height':'auto','width':'auto'});
           }
         }
 
