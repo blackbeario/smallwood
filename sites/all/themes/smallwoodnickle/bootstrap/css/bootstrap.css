@@ -7,6 +7,9 @@
   margin: 0;
   padding: 0;
 }
+.inline-block {
+  display: inline-block;
+}
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;

@@ -14,6 +14,11 @@
           $('html,body').animate({scrollTop:ftrOffset},500);
           return false;
         });
+
+        /**
+        * Sticky footer nav front page.
+        */
+        $('.node-type-news article .field-label, .page-archive article .field-label').html('Tags');
         
         /*
         function isRetina() {
@@ -103,7 +108,7 @@
         /**
         * Toggle the visibility of the staff bios.
         */
-        $('.page-about .team').click(function() {
+        $('.page-about .team').click(function(event) {
           // Variables
           w = $(this).width(),
           h = $(this).height(),
@@ -118,6 +123,10 @@
             $('html, body').animate({scrollTop:bOffset-n-10},500);
           }
 
+          if ($(this).hasClass('views-row-last')) {
+            return false;
+          }
+
           $(this).removeClass('faded').addClass('active');
 
           // Remove all appended bios from sibling masonry elements.
@@ -126,9 +135,14 @@
           // Clone the staff bio and insert after clicked staff with masonry class.
           if (($(window).width() <= 991) && ($(this).hasClass('Staff'))) {
             if (bl === 0) {
-              if ($(this).is('.Staff:even')) {
+              if ($(this).is('.Staff:even') && (!$(this).next().hasClass('views-row-last'))) {
                 nextStaff = $(this).next('.Staff');
                 bio.clone().toggleClass('masonry-item').addClass('Staff').css({'left':0, 'width':'99%', 'height':h}).insertAfter(nextStaff).find('.guts').wrap("<div class='shell'></div>");
+                scroll();
+              }
+              else if ($(this).next().hasClass('views-row-last')) {
+                nextStaff = $(this).next('.Staff');
+                bio.clone().toggleClass('masonry-item').addClass('Staff').css({'right':0, 'width':'99%', 'height':h}).insertAfter(nextStaff).find('.guts').wrap("<div class='shell'></div>");
                 scroll();
               }
               else {
@@ -136,6 +150,7 @@
                 scroll();
               }
             }
+
             // Remove bio if already inserted.
             else {
               $('.bio.masonry-item').remove();
@@ -149,20 +164,29 @@
 
           if (($(window).width() > 991) || ($(this).hasClass('Partner'))) {
             if (bl === 0) {
-              if ($(this).hasClass('Staff')) {
+              if (($(this).hasClass('Staff')) && (!$(this).next().hasClass('views-row-last'))) {
                 bio.clone().toggleClass('masonry-item').addClass('Staff').css({'left':w+10, 'width':w*2+10, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
+                scroll();
+              }
+              else if (($(this).hasClass('Staff')) && ($(this).next().hasClass('views-row-last'))) {
+                nextStaff = $(this).next('.Staff');
+                bio.clone().toggleClass('masonry-item').addClass('Staff').css({'right':0, 'width':w, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
+                $('.views-row-last').toggle();
                 scroll();
               }
               else {
                 bio.clone().toggleClass('masonry-item').addClass('Partner').css({'left':w+10, 'width':w-8, 'height':h}).insertAfter(this).find('.guts').wrap("<div class='shell'></div>");
                 scroll();
-              }         
+              }
             }
             // Remove bio on second click if already inserted.
             else {
               $('.bio.masonry-item').remove();
               bro.removeClass('faded');
               $('.team').removeClass('active');
+              if (!$('.views-row-last:visible').is(':visible')) {
+                $('.views-row-last').toggle();
+              }
             }
             // Reinit the masonry function to re-order the items.
             cont.masonry('reload');

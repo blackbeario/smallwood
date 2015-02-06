@@ -89,8 +89,12 @@ body {
     font-family: @font-family-sans-serif;
     .text-uppercase;
     color: @blue;
-    letter-spacing: 5px;
+    letter-spacing: 1px;
   }
+  // Chrome & Firefox font smoothing OSX
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
 
   // Add padding to body if various toolbar or navbars are fixed on top.
   &.navbar-is-fixed-top {
@@ -187,6 +191,7 @@ body {
       }
       a {
         color: #fff;
+        letter-spacing: 1px;
       }
     }
   }
@@ -447,7 +452,8 @@ table tr.error {
 }
 ul li.collapsed,
 ul li.expanded,
-ul li.leaf {
+ul li.leaf,
+ul li {
   list-style: none;
   list-style-image: none;
 }

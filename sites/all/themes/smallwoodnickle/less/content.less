@@ -17,11 +17,11 @@
   }
 
   .slide {
-    height: 100%;
+    height: 101%;
     width: 101%; // fix 1px edge on screen
     background-size: cover;
     background-position: 50% 50%;
-    margin: 0 -1px; // fix 1px edge on screen
+    margin: -1px; // fix 1px edge on screen
     overflow: hidden;
   }
 
@@ -128,10 +128,66 @@
 
 	&.Staff {
 		width: 48%;
+    .title  {
+      display: none;
+    }
+    &.views-row-last .bio {
+      display: block;
+      opacity: 1; 
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      .text-center;
+      color: @wht;
+
+      a {
+        display: block;
+        color: @wht;
+        width: 100%;
+        height: 100%;
+        &:hover, &:active {
+          text-decoration: none;
+        }
+      }
+
+      .meet {
+        font: normal 1.5em @font-family-sans-serif;
+        .text-uppercase;
+        padding-top: 30%;
+        height: 100%;
+        display: block;
+        .team {
+          font: normal 250% @font-family-serif;
+        }
+        @media @tablet {
+        font-size: 2em;
+        }
+        @media @normal {
+          font-size: 1.5em;
+        }
+        @media @wide {
+          font-size: 2em;
+        }
+      }
+
+      .close, h3.title {
+        display: none;
+      }
+    }
     @media @normal {
       width: 24%;
     }
 	}
+
+  .guts h3.title {
+    display: block;
+    color: @wht;
+    .small {
+      display: none;
+    }
+  }
 
 	&.Partner {
 		width: 100%; 
@@ -144,31 +200,62 @@
     @media @normal {
       width: 49.5%;
     }
-		.title {
-			font-size: 2em;
-		}
-	}
+		h2.title {
+      color: @wht;
+      margin: 0;
+      transform: rotate(-90deg);
+      .text-center;
+      letter-spacing: 3px;
+      font: normal 2em @font-family-serif;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      text-transform: uppercase;
+      width: 100%;
+      height: 100%;
+      line-height: .8;
+      padding-top: .8em;
+      @media @tablet {
+        font-size: 3em;
+      }
+      @media @normal {
+        font-size: 2em;
+      }
+      @media @wide {
+        font-size: 3em;
+      }
 
-	.title {
-		transform: rotate(-90deg);
-		position: absolute;
-		left: 0;
-		left: 30px;
-		bottom: 0;
-		font: 1.5em Times,serif;
-		text-transform: uppercase;
-		width: 14px;
+      .small {
+        font: normal 40% @font-family-sans-serif;
+        color: @wht;
+      }
+      a {
+        color: inherit;
+        width: 100%;
+        height: 100%;
+        display: block;
 
-		a {
-			color: @body-bg;
-		}
+        &:hover, &:active {
+          text-decoration: none;
+        }
+        @media @tablet {
+          font-size: 1.5em;
+        }
+        @media @normal {
+          font-size: 1em;
+        }
+        @media @wide {
+          font-size: 1.5em;
+        }
+  		}
+    }
 	}
 }
 
 .bio {
 	display: none;
 	color: @body-bg;
-	background: url(../img/footer_bg.jpg) no-repeat 50% 0 / cover;
+	background: url(../img/meetteam_bg.jpg) no-repeat 50% 0 / cover;
 	opacity: 0;
 
 	&.masonry-item {
@@ -223,7 +310,7 @@
           text-transform: uppercase;
           color: @wht;
           margin-bottom: .25em;
-          display: inline-block;
+          .inline-block;
           @media @tablet {
             font-size: 2em;
           }
@@ -318,7 +405,7 @@
         &.active:before {
           content:"";
           width: 1.5em;
-          display: inline-block;
+          .inline-block;
           border-top: 4px solid @blue;
           vertical-align: super;
           margin-left: -40px;
@@ -350,7 +437,6 @@
               left: -35px;
               width: 101px;
               text-align: center;
-              z-index: 99;
             }
 
             &:nth-child(1):before {
@@ -430,7 +516,7 @@
       font-size: 2em;
       .text-center;
       @media @tablet {
-        display: inline-block;
+        .inline-block;
         .text-left;
         padding-left: 1em;
         width: 30%;
@@ -441,7 +527,7 @@
     .tags {
       display: none;
       @media @tablet {
-        display: inline-block;
+        .inline-block;
         width: 15%;
         vertical-align: top;
       }
@@ -451,9 +537,8 @@
     }
     .desc {
       padding: 2em;
-      .text-justify;
       @media @tablet {
-        display: inline-block;
+        .inline-block;
         width: 50%;
         line-height: 1.875em;
       }
@@ -532,17 +617,144 @@
       padding: 1.5em 3em;
       color: @wht;
       margin: 2em 0 0;
-      display: inline-block;
+      .inline-block;
       font: 400 .75em @font-family-sans-serif;
       .text-uppercase;
     }
 
     .tags a {
-      display: inline-block;
+      .inline-block;
+    }
+  }
+}
+
+.page-news {
+
+  h1.page-header {
+    font-size: 1.25em;
+    padding-bottom: .25em;
+    border-bottom: 1px solid;
+    display: inline-block;
+  }
+
+  .view-news {
+    .views-row {
+      border-bottom: 1px solid;
+      margin-bottom: 1em;
+      padding: 1em;
+
+      .views-field-title {
+        font: 400 1.75em @font-family-sans-serif;
+        .text-uppercase;
+        margin-bottom: 1em;
+        @media @tablet {
+          clear: left;
+          margin-top: 1em;
+          .inline-block;
+        }
+        @media @normal {
+          clear: none;
+          margin-top: 0;
+          display: block;
+        }
+      }
+      .news-body {
+        line-height: 1.5;
+      }
+      .tags, .tags a, .more {
+        display: none;
+        @media @tablet {
+          .inline-block;
+        }
+      }
+      .tags .label {
+        margin-right: .5em;
+      }
+      .img {
+        margin-right: 2em;
+      }
+      .more a {
+        background: @blue;
+        color: @wht;
+        font: 400 .75em @font-family-sans-serif;
+        padding: 1em 2em;
+        margin-left: 2em;
+      }
     }
   }
 
+  aside {
+    background: @gray-lighter;
+    padding: 4em 2em;
 
+    h2.block-title {
+      border-bottom: 1px solid;
+      margin-bottom: 1em;
+      .inline-block;
+    }
+  }
+}
+
+.node-type-news, .page-archive {
+  .node-news {
+    border-bottom: 1px solid;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+  }
+  .field-type-image {
+    margin-bottom: 2em;
+  }
+  .field-name-field-tags {
+    margin: 1em 0;
+    .inline-block;
+    .field-label {
+      margin: .5em;
+      font: 400 .9em @font-family-sans-serif;
+      color: @blue;
+      .text-uppercase;
+      .inline-block;
+    }
+    .field-items {
+      .inline-block;
+        .field-item {
+          .inline-block;
+          margin-right: .5em;
+
+          &:after {
+            content: "/";
+            margin-left: .5em;
+            font-size: .9em;
+            vertical-align: top;
+         }
+         &:nth-last-child(1){
+          &:after {
+            content: " ";
+          }
+        }
+      }
+    }
+  }
+  .list-inline {
+    .inline-block;
+     a {
+      background: @blue;
+      color: @wht;
+      font: 400 .75em @font-family-sans-serif;
+      padding: 1em 2em;
+      margin-left: 2em;     
+    }
+  }
+
+  aside {
+    background: @gray-lighter;
+    padding: 4em 2em;
+
+    h2.block-title {
+      border-bottom: 1px solid;
+      margin-bottom: 1em;
+      .inline-block;
+    }
+  }
 }
 
 /* ========================
@@ -649,6 +861,15 @@
         .text-uppercase;
         letter-spacing: 4px;
 
+        a.headcase {
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
         @media @tablet {
           .order(2);
           overflow: hidden;
@@ -713,7 +934,7 @@
             &::before,
             &::after {
               content: "";
-              display: inline-block;
+              .inline-block;
               border-top: 1px solid @wht;
               width: 1em;
               margin: 3px 5px;
@@ -787,7 +1008,7 @@
     font-size: 2em;
     .text-center;
     @media @tablet {
-      display: inline-block;
+      .inline-block;
       .text-left;
       padding-left: 1em;
       width: 30%;
@@ -798,7 +1019,7 @@
   .tags {
     display: none;
     @media @tablet {
-      display: inline-block;
+      .inline-block;
       width: 15%;
       vertical-align: top;
     }
@@ -810,7 +1031,7 @@
     padding: 2em;
     .text-justify;
     @media @tablet {
-      display: inline-block;
+      .inline-block;
       width: 50%;
       line-height: 1.5em;
     }
