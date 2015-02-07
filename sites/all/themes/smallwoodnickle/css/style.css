@@ -7313,21 +7313,6 @@ nav.sticky ul.links li.last {
   line-height: .8;
   padding-top: .8em;
 }
-@media screen and (min-width: 768px) {
-  .masonry-item.Partner h2.title {
-    font-size: 3em;
-  }
-}
-@media screen and (min-width: 992px) {
-  .masonry-item.Partner h2.title {
-    font-size: 2em;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .masonry-item.Partner h2.title {
-    font-size: 3em;
-  }
-}
 .masonry-item.Partner h2.title .small {
   font: normal 40% 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
   color: #ffffff;
