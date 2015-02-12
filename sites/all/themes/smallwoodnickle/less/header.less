@@ -63,7 +63,7 @@ nav.sticky {
   }
 
   .navbar-collapse {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.75);
     border-top: none;
     box-shadow: none;
     margin-top: 60px;
@@ -97,18 +97,19 @@ nav.sticky {
     position: relative;
 
     li {
-      float: right;
+      .text-right;
       clear: both;
       text-transform: uppercase;
       list-style: none;
-      line-height: 1.65;
+      line-height: 3;
 
       @media @tablet {
         margin-right: 2em;
+        line-height: 1.65;
       }
 
       a {
-        color: @gold;
+        color: @wht;
         padding: 5px 15px;
         font-family: 'Adobe Caslon', Times, serif;
         letter-spacing: 1px;

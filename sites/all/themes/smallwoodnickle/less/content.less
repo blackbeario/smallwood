@@ -204,6 +204,8 @@
       color: @wht;
       margin: 0;
       transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
       .text-center;
       letter-spacing: 3px;
       font: normal 2em @font-family-serif;
@@ -432,7 +434,9 @@
 
             &:nth-child(1):before {
               content:"previous image";
-              transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                -webkit-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
             }
              
             &:nth-child(2){
@@ -441,6 +445,8 @@
               &:before {
                 content:"next image";
                 transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
                 left: auto;
                 right: -35px;
               }
