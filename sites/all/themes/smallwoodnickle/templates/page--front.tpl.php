@@ -112,7 +112,7 @@
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
       ->propertyCondition('status', 1)
-      ->propertyCondition('type', array('project'))
+      ->propertyCondition('type', array('homepage_slide'))
       ->propertyOrderBy('created', 'DESC')
       ->range(0, 5);
     $result = $query->execute();
@@ -130,7 +130,7 @@
     <div class="cycle-prev"></div>
     <div class="cycle-next"></div>
     <?php foreach ($nodes as $slide) : ?>
-        <img class="slide" style="background-image:url(<?php print render($slide->field_project_image['und'][0]['uri']); ?>)"/>
+        <img class="slide" style="background-image:url(<?php print render($slide->field_home_slide['und'][0]['uri']); ?>)"/>
     <?php endforeach; ?>
   </div>
 </section>
