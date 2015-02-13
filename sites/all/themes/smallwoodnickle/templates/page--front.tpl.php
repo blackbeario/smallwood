@@ -109,12 +109,11 @@
 <section class="slideshow">
   <!-- Drupal EFQ ref:http://www.wentsch.me/flexslider-drupal-using-entity-field-query-efq -->
   <?php                  
-    $query = new EntityFieldQuery();
+    $query = new WeightEntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
       ->propertyCondition('status', 1)
-      ->propertyCondition('type', array('homepage_slide'))
-      ->propertyOrderBy('created', 'DESC')
-      ->range(0, 5);
+      ->propertyCondition('type', array('homepage_slide'));
+      //->range(0, 5);
     $result = $query->execute();
     $nodes = node_load_multiple(array_keys($result['node']));
   ?>
