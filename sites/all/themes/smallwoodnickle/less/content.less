@@ -40,12 +40,12 @@
 }
 
 .main-container {
-	margin-top: 2em;
+	padding-top: 2em;
   .not-front & {
-    margin-top: 5em;
+    padding-top: 5em;
 
     @media @tablet {
-      margin-top: 14em;
+      padding-top: 14em;
     }
   }
 }
@@ -121,6 +121,10 @@
 .masonry-item {
 	margin-bottom: 10px;
 	cursor: pointer;
+
+  &.views-row-last {
+    cursor: default;
+  }
 
 	&.faded {
 		.opacity(.2);
@@ -365,6 +369,9 @@
       margin: 18% 5% 0 10%;
       width: 44%;
       vertical-align: middle;
+      @media @wide {
+        font-size: 42px;
+      }
     }
     .residential {
       margin: 18% 5%;
@@ -381,7 +388,6 @@
     line-height: 1.5em;
   }
   #block-block-5 {
-    padding-bottom: 4em;
     .row .col-md-4 {
       padding: 15px;
       @media @tablet{
@@ -409,6 +415,11 @@
   }
 
   .view-projects.commercial {
+    .views-row-even,
+    .views-row-odd {
+      padding-bottom: 3em;
+    }
+
     .flexslider {
       .strip();
       @media @tablet {
@@ -658,7 +669,7 @@
       .news-body {
         line-height: 1.5;
       }
-      .tags, .tags a, .more {
+      .tags, .more {
         display: none;
         @media @tablet {
           .inline-block;
@@ -761,8 +772,8 @@
 
   .page-header {
     margin: 0;
-    width: 80%;
     line-height: 2;
+    text-align: center;
 
     @media @tablet {
       margin: 30px auto;
@@ -773,6 +784,15 @@
     }
     @media @wide {
     	width: 40%;
+    }
+    
+    .logo {
+      margin: 0 auto;
+      // for svg.
+      width: 80%;
+      @media @tablet {
+        width: 300px;
+      }
     }
 
     span {
@@ -802,7 +822,8 @@
 ======================== */
 .page-projects-residential {
   .container-fluid {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     overflow-x: hidden;
   }
 
@@ -826,11 +847,6 @@
           position: absolute;
           top: 0;
           right: 25%;
-
-          a {
-            display: block;
-            font-style: italic;
-          }
         }
         .img {
           .order(1);
@@ -839,7 +855,7 @@
         .tease {
           display: block;
           .order(4);
-          font-size: smaller;
+          font-size: small;
           line-height: 1.5;
           overflow: hidden;
           position: absolute;
@@ -1026,7 +1042,6 @@
   }
   .desc {
     padding: 2em;
-    .text-justify;
     @media @tablet {
       .inline-block;
       width: 50%;

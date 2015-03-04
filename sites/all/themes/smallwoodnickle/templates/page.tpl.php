@@ -73,85 +73,92 @@
  * @ingroup themeable
  */
 ?>
-
-<nav class="nav sticky">
-  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-  <span class="sr-only">Toggle navigation</span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  </button>
-  <a href="/" title="Smallwood+Nickle" class="sn">SN</a>
-  <nav class="navbar-collapse collapse" role="navigation">
-    <?php print $footer_nav; ?>
+<div class="wrapper">
+  <nav class="nav sticky">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    </button>
+    <a href="/" title="Smallwood+Nickle" class="sn">SN</a>
+    <nav class="navbar-collapse collapse" role="navigation">
+      <?php print $footer_nav; ?>
+    </nav>
   </nav>
-</nav>
 
-<?php if (!empty($page['highlighted'])): ?>
-  <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-<?php endif; ?>
+  <?php if (!empty($page['highlighted'])): ?>
+    <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+  <?php endif; ?>
 
-<div class="main-container container">
+  <div class="main-container container">
 
-  <header role="banner" id="page-header">
-    <?php print render($page['header']); ?>
-  </header> <!-- /#page-header -->
+    <header role="banner" id="page-header">
+      <?php print render($page['header']); ?>
+    </header> <!-- /#page-header -->
 
-  <div class="row">
+    <div class="row">
 
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
-
-    <section<?php print $content_column_class; ?>>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
+      <?php if (!empty($page['sidebar_first'])): ?>
+        <aside class="col-sm-3" role="complementary">
+          <?php print render($page['sidebar_first']); ?>
+        </aside>  <!-- /#sidebar-first -->
       <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
-      <?php if (!empty($page['help'])): ?>
-        <?php print render($page['help']); ?>
-      <?php endif; ?>
-      <?php if (!empty($action_links)): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-    </section>
 
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
-    <?php endif; ?>
+      <section<?php print $content_column_class; ?>>
+        <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+        <a id="main-content"></a>
+        <?php print render($title_prefix); ?>
+        <?php if (!empty($title)): ?>
+          <h1 class="page-header"><?php print $title; ?></h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
+        <?php print $messages; ?>
+        <?php if (!empty($tabs)): ?>
+          <?php print render($tabs); ?>
+        <?php endif; ?>
+        <?php if (!empty($page['help'])): ?>
+          <?php print render($page['help']); ?>
+        <?php endif; ?>
+        <?php if (!empty($action_links)): ?>
+          <ul class="action-links"><?php print render($action_links); ?></ul>
+        <?php endif; ?>
+        <?php print render($page['content']); ?>
+      </section>
 
+      <?php if (!empty($page['sidebar_second'])): ?>
+        <aside class="col-sm-3" role="complementary">
+          <?php print render($page['sidebar_second']); ?>
+        </aside>  <!-- /#sidebar-second -->
+      <?php endif; ?>
+
+    </div>
   </div>
+  <footer class="container">
+    <div class="footer">
+      <?php                  
+        $query = new EntityFieldQuery();
+        $query->entityCondition('entity_type', 'node')
+          ->entityCondition('entity_id', 15)
+          ->propertyCondition('status', 1)
+          ->propertyCondition('type', array('banner'))
+          ->propertyOrderBy('created', 'DESC')
+          ->range(0, 5);
+        $result = $query->execute();
+        $nodes = node_load_multiple(array_keys($result['node']));
+      ?>
+      <?php foreach ($nodes as $banner) : ?>
+          <div class="body">
+            <?php print render($banner->body['und'][0]['value']); ?>
+          </div>
+          <img class="bkg img-responsive" src="<?php print render($banner->field_background_image['und'][0]['uri']); ?>"/>
+      <?php endforeach; ?>
+    </div>
+    
+    <em class="copyright">&copy; <?php print date('o');?> Smallwood+Nickle, PLLC.
+      <?php if ($page['footer']):?>
+        <?php print render($page['footer']); ?>
+      <?php endif; ?>
+    </em>
+  </footer>
 </div>
-<footer class="container">
-  <div class="footer">
-    <?php                  
-      $query = new EntityFieldQuery();
-      $query->entityCondition('entity_type', 'node')
-        ->entityCondition('entity_id', 15)
-        ->propertyCondition('status', 1)
-        ->propertyCondition('type', array('banner'))
-        ->propertyOrderBy('created', 'DESC')
-        ->range(0, 5);
-      $result = $query->execute();
-      $nodes = node_load_multiple(array_keys($result['node']));
-    ?>
-    <?php foreach ($nodes as $banner) : ?>
-        <div class="body">
-          <?php print render($banner->body['und'][0]['value']); ?>
-        </div>
-        <img class="bkg img-responsive" src="<?php print render($banner->field_background_image['und'][0]['uri']); ?>"/>
-    <?php endforeach; ?>
-  </div>
-</footer>

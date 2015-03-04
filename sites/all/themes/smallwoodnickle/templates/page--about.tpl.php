@@ -87,18 +87,9 @@
     </nav>
   </nav>
 
-  <?php if (!empty($page['highlighted'])): ?>
-    <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-  <?php endif; ?>
-
-  <div class="main-container container-fluid">
-
-    <header role="banner" id="page-header">
-      <?php print render($page['header']); ?>
-    </header> <!-- /#page-header -->
+  <div class="main-container container">
 
     <div class="row">
-
       <?php if (!empty($page['sidebar_first'])): ?>
         <aside class="col-sm-3" role="complementary">
           <?php print render($page['sidebar_first']); ?>
@@ -110,7 +101,9 @@
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
         <?php if (!empty($title)): ?>
-          <h1 class="page-header"><?php print $title; ?></h1>
+          <h1 class="page-header"><?php print $title; ?>
+          <img class="logo" src="<?php print path_to_theme() ?>/img/s+n_logo_blue.svg" alt="<?php print $site_name; ?>" />
+        </h1>
         <?php endif; ?>
         <?php print render($title_suffix); ?>
         <?php print $messages; ?>
@@ -162,25 +155,3 @@
     </em>
   </footer>
 </div>
-<script type="text/javascript">
-  /**
-  * Acrtext.js for Residential page headers.
-  **/
-  (function ($) {
-    $(document).ready(function() {
-      function textarc() {
-        if ($(window).width() < 992) {
-          $('.head .title a').arctext({radius: 125});
-        }
-        if ($(window).width() >= 992) {
-          $('.head .title a').arctext({radius: 150});
-        }
-      }
-      textarc();
-      $(window).resize(function(){
-        textarc();
-      });
-    });
-   })(jQuery); 
-</script>
-<?php drupal_add_js('sites/all/libraries/jquery.arctext/jquery.arctext.js'); ?>

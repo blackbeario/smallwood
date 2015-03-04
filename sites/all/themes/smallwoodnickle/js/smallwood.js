@@ -20,36 +20,14 @@
       /**
       * Sticky footer nav front page.
       */
-      $('.node-type-news article .field-label, .page-archive article .field-label').html('Tags');
+      $('.node-type-news article .field-label, .page-archive article .field-label').html('At A Glance');
       
 
       /**
       * Responsive slideshow and front banner EFQ img paths.
       **/
       $('.slide').each(function(){
-        /* Mobile */
-        if ($(window).width() <= 480 ) {
-          /* Check for retina devices. */
-          if (window.devicePixelRatio > 1) {
-            $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files/styles/slide_768/public'));
-          }
-          else {
-            $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files/styles/slide_480/public'));
-          }
-        }
-        /* Tablet */
-        if ((($(window).width() <= 768) && ($(window).width() > 480))) {
-          /* Check for retina devices. */
-          if (window.devicePixelRatio > 1) {
-            $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files'));
-          }
-          else {
-            $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files/styles/slide_768/public'));
-          }
-        }
-        if ($(window).width() > 768) {
           $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files'));
-        }
       });
 
 

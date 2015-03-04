@@ -73,148 +73,85 @@
  * @ingroup themeable
  */
 ?>
+<div class="wrapper">
+  <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
+    <div class="container">
+      <div class="navbar-header">
+        <?php if ($logo): ?>
+          <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          </a>
+        <?php endif; ?>
 
-<header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
-  <div class="container">
-    <div class="navbar-header">
-      <?php if ($logo): ?>
-        <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-      <?php endif; ?>
+        <?php if (!empty($site_name)): ?>
+          <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+        <?php endif; ?>
+      </div>
 
-      <?php if (!empty($site_name)): ?>
-        <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+      <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+        <div class="foobar navbar-collapse collapse">
+          <nav role="navigation">
+            <?php if (!empty($primary_nav)): ?>
+              <?php print render($primary_nav); ?>
+            <?php endif; ?>
+            <?php if (!empty($secondary_nav)): ?>
+              <?php print render($secondary_nav); ?>
+            <?php endif; ?>
+            <?php if (!empty($page['navigation'])): ?>
+              <?php print render($page['navigation']); ?>
+            <?php endif; ?>
+          </nav>
+        </div>
       <?php endif; ?>
     </div>
+  </header>
 
-    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="foobar navbar-collapse collapse">
-        <nav role="navigation">
-          <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($secondary_nav)): ?>
-            <?php print render($secondary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-          <?php endif; ?>
-        </nav>
-      </div>
-    <?php endif; ?>
-  </div>
-</header>
+  <section class="slideshow">
+    <!-- Drupal EFQ ref:http://www.wentsch.me/flexslider-drupal-using-entity-field-query-efq -->
+    <?php                  
+      $query = new WeightEntityFieldQuery();
+      $query->entityCondition('entity_type', 'node')
+        ->propertyCondition('status', 1)
+        ->propertyCondition('type', array('homepage_slide'));
+        //->range(0, 5);
+      $result = $query->execute();
+      $nodes = node_load_multiple(array_keys($result['node']));
+    ?>
 
-<section class="slideshow">
-  <!-- Drupal EFQ ref:http://www.wentsch.me/flexslider-drupal-using-entity-field-query-efq -->
-  <?php                  
-    $query = new WeightEntityFieldQuery();
-    $query->entityCondition('entity_type', 'node')
-      ->propertyCondition('status', 1)
-      ->propertyCondition('type', array('homepage_slide'));
-      //->range(0, 5);
-    $result = $query->execute();
-    $nodes = node_load_multiple(array_keys($result['node']));
-  ?>
+    <div class="cycle-slideshow" 
+      data-cycle-log="false"
+      data-cycle-fx="fadeout"
+      data-cycle-speed="500"
+      data-cycle-loader="wait"
+      data-cycle-swipe="true"
+      data-cycle-swipe-fx="scrollHorz">
+      <!-- prev/next links -->
+      <div class="cycle-prev"></div>
+      <div class="cycle-next"></div>
+      <?php foreach ($nodes as $slide) : ?>
+          <img class="slide" style="background-image:url(<?php print render($slide->field_home_slide['und'][0]['uri']); ?>)"/>
+      <?php endforeach; ?>
+    </div>
+  </section>
 
-  <div class="cycle-slideshow" 
-    data-cycle-log="false"
-    data-cycle-fx="fadeout"
-    data-cycle-speed="500"
-    data-cycle-loader="wait"
-    data-cycle-swipe="true"
-    data-cycle-swipe-fx="scrollHorz">
-    <!-- prev/next links -->
-    <div class="cycle-prev"></div>
-    <div class="cycle-next"></div>
-    <?php foreach ($nodes as $slide) : ?>
-        <img class="slide" style="background-image:url(<?php print render($slide->field_home_slide['und'][0]['uri']); ?>)"/>
-    <?php endforeach; ?>
-  </div>
-</section>
-
-<nav class="nav sticky">
-  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-  <span class="sr-only">Toggle navigation</span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  </button>
-  <a href="/" title="Smallwood+Nickle" class="sn">SN</a>
-  <nav class="navbar-collapse collapse" role="navigation">
-    <?php print $footer_nav; ?>
+  <nav class="nav sticky">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    </button>
+    <a href="/" title="Smallwood+Nickle" class="sn">SN</a>
+    <nav class="navbar-collapse collapse" role="navigation">
+      <?php print $footer_nav; ?>
+    </nav>
   </nav>
-</nav>
 
-<section class="banner container-fluid">
-  <?php                  
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'node')
-      ->entityCondition('entity_id', 11)
-      ->propertyCondition('status', 1)
-      ->propertyCondition('type', array('banner'))
-      ->propertyOrderBy('created', 'DESC')
-      ->range(0, 5);
-    $result = $query->execute();
-    $nodes = node_load_multiple(array_keys($result['node']));
-  ?>
-  <?php foreach ($nodes as $banner) : ?>
-      <img class="bkg img-responsive" src="<?php print render($banner->field_background_image['und'][0]['uri']); ?>"/>
-      <div class="body">
-        <?php print render($banner->body['und'][0]['value']); ?>
-      </div>
-  <?php endforeach; ?>
-</section>
-
-<div class="main-container container">
-  <header role="banner" id="page-header">
-    <?php print render($page['header']); ?>
-  </header> <!-- /#page-header -->
-
-  <div class="row">
-
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
-
-    <section<?php print $content_column_class; ?>>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-      <a id="main-content"></a>
-      <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
-      <?php if (!empty($page['help'])): ?>
-        <?php print render($page['help']); ?>
-      <?php endif; ?>
-      <?php if (!empty($action_links)): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php 
-      /* Removes 'No front page content has been created yet.' */
-        $page['content']['system_main']['default_message'] = array();
-        print render($page['content']); 
-      ?>
-
-    </section>
-
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
-    <?php endif; ?>
-
-  </div>
-</div>
-<footer class="container">
-  <div class="footer">
+  <section class="banner container-fluid">
     <?php                  
       $query = new EntityFieldQuery();
       $query->entityCondition('entity_type', 'node')
-        ->entityCondition('entity_id', 15)
+        ->entityCondition('entity_id', 11)
         ->propertyCondition('status', 1)
         ->propertyCondition('type', array('banner'))
         ->propertyOrderBy('created', 'DESC')
@@ -223,12 +160,82 @@
       $nodes = node_load_multiple(array_keys($result['node']));
     ?>
     <?php foreach ($nodes as $banner) : ?>
+        <img class="bkg img-responsive" src="<?php print render($banner->field_background_image['und'][0]['uri']); ?>"/>
         <div class="body">
           <?php print render($banner->body['und'][0]['value']); ?>
         </div>
-        <img class="bkg img-responsive" src="<?php print render($banner->field_background_image['und'][0]['uri']); ?>"/>
     <?php endforeach; ?>
+  </section>
+
+  <div class="main-container container">
+    <header role="banner" id="page-header">
+      <?php print render($page['header']); ?>
+    </header> <!-- /#page-header -->
+
+    <div class="row">
+
+      <?php if (!empty($page['sidebar_first'])): ?>
+        <aside class="col-sm-3" role="complementary">
+          <?php print render($page['sidebar_first']); ?>
+        </aside>  <!-- /#sidebar-first -->
+      <?php endif; ?>
+
+      <section<?php print $content_column_class; ?>>
+        <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+        <a id="main-content"></a>
+        <?php print $messages; ?>
+        <?php if (!empty($tabs)): ?>
+          <?php print render($tabs); ?>
+        <?php endif; ?>
+        <?php if (!empty($page['help'])): ?>
+          <?php print render($page['help']); ?>
+        <?php endif; ?>
+        <?php if (!empty($action_links)): ?>
+          <ul class="action-links"><?php print render($action_links); ?></ul>
+        <?php endif; ?>
+        <?php 
+        /* Removes 'No front page content has been created yet.' */
+          $page['content']['system_main']['default_message'] = array();
+          print render($page['content']); 
+        ?>
+
+      </section>
+
+      <?php if (!empty($page['sidebar_second'])): ?>
+        <aside class="col-sm-3" role="complementary">
+          <?php print render($page['sidebar_second']); ?>
+        </aside>  <!-- /#sidebar-second -->
+      <?php endif; ?>
+
+    </div>
   </div>
-</footer>
+  <footer class="container">
+    <div class="footer">
+      <?php                  
+        $query = new EntityFieldQuery();
+        $query->entityCondition('entity_type', 'node')
+          ->entityCondition('entity_id', 15)
+          ->propertyCondition('status', 1)
+          ->propertyCondition('type', array('banner'))
+          ->propertyOrderBy('created', 'DESC')
+          ->range(0, 5);
+        $result = $query->execute();
+        $nodes = node_load_multiple(array_keys($result['node']));
+      ?>
+      <?php foreach ($nodes as $banner) : ?>
+          <div class="body">
+            <?php print render($banner->body['und'][0]['value']); ?>
+          </div>
+          <img class="bkg img-responsive" src="<?php print render($banner->field_background_image['und'][0]['uri']); ?>"/>
+      <?php endforeach; ?>
+    </div>
+
+    <em class="copyright">&copy; <?php print date('o');?> Smallwood+Nickle, PLLC.
+      <?php if ($page['footer']):?>
+        <?php print render($page['footer']); ?>
+      <?php endif; ?>
+    </em>
+  </footer>
+</div>
 <?php drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.min.js'); ?>
 <?php drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.swipe.min.js'); ?>
