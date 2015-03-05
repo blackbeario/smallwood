@@ -107,13 +107,11 @@
   </header>
 
   <section class="slideshow">
-    <!-- Drupal EFQ ref:http://www.wentsch.me/flexslider-drupal-using-entity-field-query-efq -->
     <?php                  
       $query = new WeightEntityFieldQuery();
       $query->entityCondition('entity_type', 'node')
         ->propertyCondition('status', 1)
         ->propertyCondition('type', array('homepage_slide'));
-        //->range(0, 5);
       $result = $query->execute();
       $nodes = node_load_multiple(array_keys($result['node']));
     ?>
@@ -122,15 +120,14 @@
       data-cycle-log="false"
       data-cycle-fx="fadeout"
       data-cycle-speed="500"
-      data-cycle-loader="wait"
       data-cycle-swipe="true"
       data-cycle-swipe-fx="scrollHorz">
       <!-- prev/next links -->
+      <?php foreach ($nodes as $slide) : ?>
+        <img class="slide" style="background-image:url(<?php print render($slide->field_home_slide['und'][0]['uri']); ?>)"/>
+      <?php endforeach; ?>
       <div class="cycle-prev"></div>
       <div class="cycle-next"></div>
-      <?php foreach ($nodes as $slide) : ?>
-          <img class="slide" style="background-image:url(<?php print render($slide->field_home_slide['und'][0]['uri']); ?>)"/>
-      <?php endforeach; ?>
     </div>
   </section>
 

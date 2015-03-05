@@ -27,7 +27,7 @@
       * Responsive slideshow and front banner EFQ img paths.
       **/
       $('.slide').each(function(){
-          $(this).attr('style',$(this).attr('style').replace('public:/','sites/default/files'));
+          $(this).attr('style',$(this).attr('style').replace('public:/','/sites/default/files'));
       });
 
 
