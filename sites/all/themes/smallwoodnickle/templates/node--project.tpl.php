@@ -23,4 +23,7 @@
   <section class="photos">
     <?php print render($content['field_project_image']);?>
   </section>
+  <section class="pager">
+    <?php print render($content['flippy_pager']);?>
+  </section>
 </article>

@@ -6197,6 +6197,9 @@ button.close {
 .desc {
   font-size: 95%;
 }
+.flippy li.next a {
+  float: none !important;
+}
 html.overlay-open .navbar-fixed-top {
   z-index: 400;
 }
