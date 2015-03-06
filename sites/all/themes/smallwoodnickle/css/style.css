@@ -7983,6 +7983,7 @@ nav.sticky ul.links li.last {
     position: absolute;
     top: 0;
     right: 25%;
+    padding-top: 0;
   }
   .page-projects-residential .view-projects.residential .views-row-odd .tags li,
   .page-projects-residential .view-projects.residential .views-row-even .tags li {
