@@ -847,6 +847,10 @@
           position: absolute;
           top: 0;
           right: 25%;
+
+            li {
+              line-height: 1.5;
+            }
         }
         .img {
           .order(1);
@@ -856,13 +860,16 @@
           display: block;
           .order(4);
           font-size: small;
-          line-height: 1.5;
+          line-height: 1.25;
           overflow: hidden;
           position: absolute;
           bottom: 0;
           right: 0;
           font-style: italic;
           padding: 0 0 0 2em;
+          @media @normal {
+            line-height: 1.5;
+          }
         }
       }
       .head {
@@ -1057,8 +1064,3 @@
     }
   }
 }
-
-
-
-
-
