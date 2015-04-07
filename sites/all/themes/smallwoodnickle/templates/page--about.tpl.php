@@ -148,7 +148,7 @@
       <?php endforeach; ?>
     </div>
     
-    <em class="copyright">&copy; <?php print date('o');?> Smallwood+Nickle, PLLC.
+    <em class="copyright">&copy; <?php print date('o');?> Smallwood Nickle Architects PLLC.
       <?php if ($page['footer']):?>
         <?php print render($page['footer']); ?>
       <?php endif; ?>

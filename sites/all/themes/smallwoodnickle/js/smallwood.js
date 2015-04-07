@@ -73,6 +73,16 @@
         getBannerHt();
       });
 
+      var commcat = $("#block-views-projects-block-1 h3");
+      commcat.each(function(){
+        $(this).nextUntil('h3').andSelf().wrapAll('<div class="comm-row"></div>');
+        $(this).click(function(){
+          $(this).toggleClass('active').parent().find('.comm-project').toggle();
+          $(this).parent().siblings().find('.comm-project').hide();
+          $(this).parent().siblings().find(commcat).removeClass('active');
+        });
+      });
+
 
       /**
       * Toggle the visibility of the staff bios.
@@ -172,6 +182,8 @@
         });
 
       }); // end team function
+
+
 
 
       /**
