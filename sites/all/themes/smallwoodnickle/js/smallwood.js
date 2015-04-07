@@ -73,6 +73,9 @@
         getBannerHt();
       });
 
+      /**
+      * Toggle Commercial categories on Commercial page.
+      **/
       var commcat = $("#block-views-projects-block-1 h3");
       commcat.each(function(){
         $(this).nextUntil('h3').andSelf().wrapAll('<div class="comm-row"></div>');
