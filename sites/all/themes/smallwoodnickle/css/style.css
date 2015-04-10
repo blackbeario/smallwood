@@ -7513,23 +7513,40 @@ nav.sticky ul.links li.last {
     float: left;
   }
 }
-.page-projects-commercial #block-views-projects-block-1 {
-  margin-bottom: 2em;
+.page-projects-commercial .comm-wrapper {
+  text-align: center;
 }
-.page-projects-commercial #block-views-projects-block-1 .view-projects {
-  padding: 0 2em;
+.page-projects-commercial #block-views-commercial-categories-block,
+.page-projects-commercial #block-views-commercial-categories-block-1,
+.page-projects-commercial #block-views-commercial-categories-block-2 {
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .page-projects-commercial #block-views-projects-block-1 .view-projects {
-    padding: 0 4em;
+  .page-projects-commercial #block-views-commercial-categories-block,
+  .page-projects-commercial #block-views-commercial-categories-block-1,
+  .page-projects-commercial #block-views-commercial-categories-block-2 {
+    width: 30%;
   }
 }
-.page-projects-commercial #block-views-projects-block-1 .view-projects .view-header {
+@media screen and (min-width: 992px) {
+  .page-projects-commercial #block-views-commercial-categories-block,
+  .page-projects-commercial #block-views-commercial-categories-block-1,
+  .page-projects-commercial #block-views-commercial-categories-block-2 {
+    width: 25%;
+  }
+}
+.page-projects-commercial .view-commercial-categories {
+  margin-bottom: 2em;
+}
+.page-projects-commercial .view-commercial-categories .view-header {
   margin: 3em 3em 2em;
   color: #20344e;
   font-size: smaller;
 }
-.page-projects-commercial #block-views-projects-block-1 .view-projects .view-header em:before {
+.page-projects-commercial .view-commercial-categories .view-header em:before {
   content: "";
   width: 1.5em;
   display: inline-block;
@@ -7538,57 +7555,38 @@ nav.sticky ul.links li.last {
   margin-left: -40px;
   margin-right: 20px;
 }
-.page-projects-commercial #block-views-projects-block-1 .view-projects .view-content {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: left;
-  justify-content: left;
-  -webkit-flex-flow: column wrap;
-  flex-flow: column wrap;
-  -webkit-align-content: stretch;
-  align-content: stretch;
-  min-height: 360px;
+.page-projects-commercial .view-commercial-categories .view-content {
   padding: 0 2em;
   margin-bottom: 3em;
 }
-@media screen and (min-width: 768px) {
-  .page-projects-commercial #block-views-projects-block-1 .view-projects .view-content {
-    max-height: 360px;
-  }
-}
-.page-projects-commercial #block-views-projects-block-1 .view-projects .view-content .comm-row {
-  width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .page-projects-commercial #block-views-projects-block-1 .view-projects .view-content .comm-row {
-    width: 30%;
-  }
-}
-.page-projects-commercial #block-views-projects-block-1 .view-projects .view-content h3 {
+.page-projects-commercial .view-commercial-categories .view-content h3 {
   color: #777777;
   cursor: pointer;
-  font-size: .875em;
+  font-size: 1em;
   margin: 10px 0;
 }
-@media screen and (min-width: 1200px) {
-  .page-projects-commercial #block-views-projects-block-1 .view-projects .view-content h3 {
+@media screen and (min-width: 768px) {
+  .page-projects-commercial .view-commercial-categories .view-content h3 {
+    font-size: .875em;
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-projects-commercial .view-commercial-categories .view-content h3 {
     font-size: 1em;
   }
 }
-.page-projects-commercial #block-views-projects-block-1 .view-projects .view-content h3:before {
+.page-projects-commercial .view-commercial-categories .view-content h3:before {
   content: "+";
   display: inline-block;
   margin-right: 5px;
 }
-.page-projects-commercial #block-views-projects-block-1 .view-projects .view-content h3.active {
+.page-projects-commercial .view-commercial-categories .view-content h3.active {
   color: #20344e;
 }
-.page-projects-commercial #block-views-projects-block-1 .view-projects .view-content h3.active:before {
+.page-projects-commercial .view-commercial-categories .view-content h3.active:before {
   content: "-";
 }
-.page-projects-commercial #block-views-projects-block-1 .view-projects .view-content .comm-project {
+.page-projects-commercial .view-commercial-categories .view-content .comm-project {
   color: #20344e;
   font-size: .8em;
   line-height: 1.5;

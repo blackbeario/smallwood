@@ -76,13 +76,14 @@
       /**
       * Toggle Commercial categories on Commercial page.
       **/
-      var commcat = $("#block-views-projects-block-1 h3");
+      var commcol = $('#block-views-commercial-categories-block,#block-views-commercial-categories-block-1,#block-views-commercial-categories-block-2').wrapAll('<section class="comm-wrapper"></section>');
+      var commcat = $(".view-commercial-categories h3");
       commcat.each(function(){
         $(this).nextUntil('h3').andSelf().wrapAll('<div class="comm-row"></div>');
         $(this).click(function(){
-          $(this).toggleClass('active').parent().find('.comm-project').toggle();
-          $(this).parent().siblings().find('.comm-project').hide();
-          $(this).parent().siblings().find(commcat).removeClass('active');
+          $(this).toggleClass('active').parent().find('.comm-project').toggle('fast');
+          $(this).parents(commcol).siblings().find('.comm-project').hide();
+          $(this).parents(commcol).siblings().find(commcat).removeClass('active');
         });
       });
 
