@@ -7513,6 +7513,29 @@ nav.sticky ul.links li.last {
     float: left;
   }
 }
+.page-projects-commercial #block-block-5 .block-header {
+  margin: 3em 3em 2em;
+  color: #20344e;
+  font-size: smaller;
+}
+.page-projects-commercial #block-block-5 .block-header em {
+  padding: 1em 4em;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .page-projects-commercial #block-block-5 .block-header em {
+    margin-left: 8em;
+  }
+}
+.page-projects-commercial #block-block-5 .block-header em:before {
+  content: "";
+  width: 1.5em;
+  display: inline-block;
+  border-top: 4px solid #20344e;
+  vertical-align: super;
+  margin-left: -40px;
+  margin-right: 20px;
+}
 .page-projects-commercial .comm-wrapper {
   text-align: center;
 }
@@ -7540,20 +7563,6 @@ nav.sticky ul.links li.last {
 }
 .page-projects-commercial .view-commercial-categories {
   margin-bottom: 2em;
-}
-.page-projects-commercial .view-commercial-categories .view-header {
-  margin: 3em 3em 2em;
-  color: #20344e;
-  font-size: smaller;
-}
-.page-projects-commercial .view-commercial-categories .view-header em:before {
-  content: "";
-  width: 1.5em;
-  display: inline-block;
-  border-top: 4px solid #20344e;
-  vertical-align: super;
-  margin-left: -40px;
-  margin-right: 20px;
 }
 .page-projects-commercial .view-commercial-categories .view-content {
   padding: 0 2em;

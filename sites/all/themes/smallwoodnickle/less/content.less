@@ -395,6 +395,28 @@
         float: left;
       }
     }
+    .block-header {
+      margin: 3em 3em 2em;
+      color: @blue;
+      font-size: smaller;
+
+      em {
+        padding: 1em 4em;
+        display: block;
+        @media @tablet{
+          margin-left: 8em;
+        }
+        &:before{
+          content:"";
+          width: 1.5em;
+          .inline-block;
+          border-top: 4px solid @blue;
+          vertical-align: super;
+          margin-left: -40px;
+          margin-right: 20px;
+        }
+      }
+    }
   }
   .comm-wrapper {
     text-align: center;
@@ -417,21 +439,6 @@
 
   .view-commercial-categories{
     margin-bottom: 2em;
-
-      .view-header {
-        margin: 3em 3em 2em;
-        color: @blue;
-        font-size: smaller;
-        em:before{
-          content:"";
-          width: 1.5em;
-          .inline-block;
-          border-top: 4px solid @blue;
-          vertical-align: super;
-          margin-left: -40px;
-          margin-right: 20px;
-        }
-      }
 
       .view-content {
         padding: 0 2em;
