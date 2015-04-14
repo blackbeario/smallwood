@@ -73,6 +73,7 @@
         getBannerHt();
       });
 
+
       /**
       * Toggle Commercial categories on Commercial page.
       **/
@@ -87,6 +88,18 @@
         });
       });
 
+      /**
+      * Add line break before ~.
+      **/
+      $('.view-commercial-categories .views-field-title:contains("~")').each(function() {
+          var str = $(this).addClass('parent');
+          // var myString = str.substr(str.indexOf("~") + 1);
+          // alert(myString);
+          str.html(function(){
+            return str.html().replace('~', '<br><span class="subproj"> ~</span>');
+            // .split('~')[1]
+          });
+      });
 
       /**
       * Toggle the visibility of the staff bios.
