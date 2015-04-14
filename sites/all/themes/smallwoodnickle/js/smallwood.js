@@ -89,16 +89,25 @@
       });
 
       /**
-      * Add line break before ~.
+      * Commercial categories parent-child list format.
       **/
-      $('.view-commercial-categories .views-field-title:contains("~")').each(function() {
-          var str = $(this).addClass('parent');
-          // var myString = str.substr(str.indexOf("~") + 1);
-          // alert(myString);
-          str.html(function(){
-            return str.html().replace('~', '<br><span class="subproj"> ~</span>');
-            // .split('~')[1]
-          });
+      $('.view-commercial-categories .comm-project:contains("~")').each(function() {
+          var str = $(this).addClass('tilde');
+          // Add line break if the first row.
+          str.parent('.comm-row').find('.tilde:first').addClass('first');
+          if (str.hasClass('first')) {
+            str.html(function(){
+              return str.html().replace('~', '<br> ~');
+            });
+          }
+          // Remove the string in front of the tilde
+          // if not the first row.
+          else {
+            str.html(function(){
+              var endString = str.html().split('~')[1];
+              return ('~') + (endString);
+            });
+          }
       });
 
       /**
