@@ -8422,11 +8422,13 @@ footer .footer .body a {
   color: #ffffff;
 }
 footer .footer .body .tel {
+  clear: both;
   color: #ad9a62;
-  width: 2%;
   display: inline-block;
   font-size: 3.75vw;
-  margin-top: 2em;
+  margin: 2em 0;
+  text-align: right;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   footer .footer .body .tel {
