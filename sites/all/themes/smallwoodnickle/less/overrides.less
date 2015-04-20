@@ -44,6 +44,18 @@
   float: none !important;
 }
 
+// Pagination overrides.
+.pagination .active span,
+.pagination .active span:hover {
+  background-color: @blue;
+  border-color: @blue;
+}
+
+.pagination li span,
+.pagination li a {
+  color: @blue;
+}
+
 html {
   &.overlay-open .navbar-fixed-top {
     z-index: 400;

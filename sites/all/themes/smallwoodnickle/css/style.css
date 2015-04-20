@@ -6200,6 +6200,15 @@ button.close {
 .flippy li.next a {
   float: none !important;
 }
+.pagination .active span,
+.pagination .active span:hover {
+  background-color: #20344e;
+  border-color: #20344e;
+}
+.pagination li span,
+.pagination li a {
+  color: #20344e;
+}
 html.overlay-open .navbar-fixed-top {
   z-index: 400;
 }
@@ -7501,8 +7510,13 @@ nav.sticky ul.links li.last {
   Commercial Page
 ============================== */
 .page-projects-commercial h1.page-header {
-  padding-left: 1em;
+  font-size: 2em;
   line-height: 1.5em;
+}
+@media screen and (min-width: 992px) {
+  .page-projects-commercial h1.page-header {
+    font-size: 2.5em;
+  }
 }
 .page-projects-commercial #block-block-5 .row .col-md-4 {
   padding: 15px;
